@@ -75,6 +75,13 @@ ul {
   font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;
+  text-align: end;
+  max-width: 350px;
+}
+
+.subtitle_1 span {
+  font-weight: 800;
+  color: #000;
 }
 
 .subtitle_1 .title {
@@ -85,17 +92,12 @@ ul {
   line-height: 52px;
 }
 
-.subtitle_1 span {
-  position: relative;
-  padding: 0 130px;
-}
-
 .subtitle_1 span:before {
   position: absolute;
   top: 50%;
   content: "";
   height: 1px;
-  width: 170px;
+  width: 50%;
   left: 0;
   background: #adadad;
 }
@@ -694,7 +696,7 @@ header .intro-text p {
 
 /*---------- About Style-------*/
 .about_us {
-  padding: 100px 0;
+  padding-top: 100px;
 }
 
 .about_us .title {
@@ -737,7 +739,7 @@ header .intro-text p {
 
 /*---------- Portfolio Style-------*/
 .portfolio {
-  padding: 100px 0;
+  padding-top: 100px;
 }
 
 .portfolio .portofolio-content {
@@ -797,10 +799,6 @@ header .intro-text p {
   color: #8e8e90;
 }
 
-.portfolio .portfolio-img {
-  margin: 100px 25px 0;
-}
-
 .portfolio .portfolio-img .img-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -848,34 +846,47 @@ header .intro-text p {
 
 /*---------- Skils Style-------*/
 .skill {
-  padding: 100px 0;
+  padding-top: 100px;
 }
 
-.skill .tools_expert {
+.skill .skill_img img {
+  width: 100%;
+}
+
+.skill .skill_wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.skill .skill_wraper .tools_expert {
+  width: 100%;
   padding: 20px 0px 0px 0px;
 }
 
-.skill .tools_expert .skill_item {
+.skill .skill_wraper .tools_expert .skill_item {
   margin-bottom: 15px;
 }
 
-.skill .tools_expert .skill_item h5 {
+.skill .skill_wraper .tools_expert .skill_item h5 {
   font-weight: 200;
-  color: #8e8e90;
 }
 
-.skill .tools_expert .skill_item .progress {
+.skill .skill_wraper .tools_expert .skill_item .progress {
   overflow: visible;
   height: 4px;
 }
 
-.skill .tools_expert .skill_item .progress .progress_bar {
+.skill .skill_wraper .tools_expert .skill_item .progress .progress_bar {
   background-color: #57d131;
   position: relative;
   border-radius: 4px;
 }
 
-.skill .tools_expert .skill_item .progress .progress_bar span {
+.skill .skill_wraper .tools_expert .skill_item .progress .progress_bar span {
   background-color: #57d131;
   position: absolute;
   bottom: -20px;
@@ -886,7 +897,7 @@ header .intro-text p {
   border-radius: 2px;
 }
 
-.skill .tools_expert .skill_item .progress .progress_bar span:after {
+.skill .skill_wraper .tools_expert .skill_item .progress .progress_bar span:after {
   bottom: 100%;
   left: 50%;
   border: solid transparent;
@@ -899,5 +910,101 @@ header .intro-text p {
   border-bottom-color: #57d131;
   border-width: 5px;
   margin-left: -5px;
+}
+
+/*---------- Resume Style-------*/
+.resume .granduate {
+  width: 100%;
+  padding-left: 44px;
+}
+
+.resume .granduate::before {
+  position: absolute;
+  width: 1px;
+  height: 380px;
+  background-color: #3b3b3b;
+  left: 22px;
+  content: "";
+  z-index: 0;
+}
+
+.resume .granduate .graduate_title {
+  height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+}
+
+.resume .granduate .graduate_title i {
+  color: #f3f3f3;
+  background: #ff724c;
+  padding: 13px 12px;
+  font-size: 15px;
+  border-radius: 100%;
+  margin-right: 15px;
+  position: absolute;
+  left: 1px;
+}
+
+.resume .granduate .graduate_title .fa-briefcase {
+  padding: 13px 14px;
+}
+
+.resume .granduate .graduate_title h4 {
+  text-align: center;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.resume .granduate .items {
+  z-index: 1;
+  padding-top: 10px;
+}
+
+.resume .granduate .items:hover {
+  cursor: pointer;
+}
+
+.resume .granduate .items:hover i {
+  background-color: #ff724c;
+  border-radius: 50%;
+}
+
+.resume .granduate .items i {
+  color: #ff724c;
+  font-size: 10px;
+  position: absolute;
+  left: 18px;
+  background-color: white;
+}
+
+.resume .granduate .items h6 {
+  font-size: 14px;
+}
+
+.resume .granduate .items h6 span {
+  font-size: 14px;
+  color: #8e8e90;
+  margin: 0px auto;
+}
+
+.resume .granduate .items span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ff724c;
+  margin-bottom: 10px;
+}
+
+.resume .granduate .items p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #8e8e90;
+  margin-top: 7px;
+  line-height: 23px;
+}
+
+.resume .work::before {
+  height: 350px;
 }
 /*# sourceMappingURL=main.css.map */
