@@ -1,12 +1,20 @@
 document.addEventListener("DOMContentLoaded", init, false);
+const scrollUp = document.getElementById("scrollUp");
 
 function init() {
-  // let mybutton = document.getElementById("myBtn");  
   document.body.className = "loaded";
   new WOW().init();
   navBar();
   typeWriter();
   galery();
+  btnScrollUp();
+}
+
+function btnScrollUp() {
+  scrollUp.addEventListener("click", function () {
+    scrollUp.style.visibility = "hidden";
+    document.documentElement.scrollTop = 0;
+  }, false);
 }
 
 function typeWriter() {
@@ -93,12 +101,9 @@ function galery() {
               break;
             }
           }
-          if (existClass) {
-            allimages[i].style.display = "block";
-            // allimages[i].style.animationName = "zoomIn";
-          } else {
-            allimages[i].style.display = "none";
-          }
+          (existClass) ?
+          (allimages[i].style.display = "block") :
+          (allimages[i].style.display = "none");
         } else {
           allimages[i].dataset.category === dataFilter ?
             (allimages[i].style.display = "block") :
@@ -120,14 +125,11 @@ function navScroll() {
   const headerId = document.getElementById("navbar");
   if (document.documentElement.scrollTop > 28) {
     headerId.classList.add("lab-navbar");
+    document.documentElement.scrollTop > screen.height ?
+      (scrollUp.style.visibility = "visible") :
+      (scrollUp.style.visibility = "hidden");
   } else {
     let existingIndex = headerId.className.indexOf("lab-navbar");
     if (existingIndex !== -1) headerId.classList.remove("lab-navbar");
   }
-  // (document.documentElement.scrollTop > 500) ? btn.style.display = "none": btn.style.display = "block";
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }

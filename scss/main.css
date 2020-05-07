@@ -8,24 +8,8 @@
   font-family: "Times New Roman", Times, serif, sans-serif, sans-serif;
 }
 
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: red;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-#myBtn:hover {
-  background-color: #555;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -49,7 +33,7 @@ h6 {
 
 p {
   color: #8e8e90;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 30px;
 }
@@ -70,7 +54,11 @@ ul {
   list-style-type: none;
 }
 
-.subtitle_1 {
+section {
+  padding-top: 100px;
+}
+
+.section-title {
   margin-bottom: 40px;
   font-size: 20px;
   font-weight: 500;
@@ -79,12 +67,12 @@ ul {
   max-width: 350px;
 }
 
-.subtitle_1 span {
+.section-title span {
   font-weight: 800;
   color: #000;
 }
 
-.subtitle_1 .title {
+.section-title .title {
   color: #222129;
   font-size: 40px;
   font-weight: 600;
@@ -92,7 +80,7 @@ ul {
   line-height: 52px;
 }
 
-.subtitle_1 span:before {
+.section-title span:before {
   position: absolute;
   top: 50%;
   content: "";
@@ -100,11 +88,6 @@ ul {
   width: 50%;
   left: 0;
   background: #adadad;
-}
-
-.subtitle_2 {
-  font-size: 25px;
-  font-weight: 600;
 }
 
 /*---------- Animation Style-------*/
@@ -695,35 +678,27 @@ header .intro-text p {
 }
 
 /*---------- About Style-------*/
-.about_us {
-  padding-top: 100px;
-}
-
-.about_us .title {
+.about-us .title {
   padding: 0 45px 0 0;
 }
 
-.about_us .about_left_content h2 {
-  text-transform: uppercase;
-  font-size: 43px;
-  font-weight: 900;
-  opacity: 0.03;
-  margin-bottom: 15px;
+.about-us .about-left-content h3 {
+  font-size: 20px;
 }
 
-.about_us .about_left_content p {
+.about-us .about-left-content p {
   padding-bottom: 10px;
 }
 
-.about_us .about_bottom {
+.about-us .about-bottom {
   margin-top: 100px;
 }
 
-.about_us .about_bottom .bottom-content {
+.about-us .about-bottom .bottom-content {
   padding-right: 30px;
 }
 
-.about_us .about_bottom .bottom-content .about-icon {
+.about-us .about-bottom .bottom-content .about-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -732,16 +707,14 @@ header .intro-text p {
           justify-content: center;
 }
 
-.about_us .about_bottom .bottom-content .subtitle_2 {
+.about-us .about-bottom .bottom-content h3 {
   padding: 40px 0 30px;
   text-align: center;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 /*---------- Portfolio Style-------*/
-.portfolio {
-  padding-top: 100px;
-}
-
 .portfolio .portofolio-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -844,99 +817,22 @@ header .intro-text p {
           transform: scale(1);
 }
 
-/*---------- Skils Style-------*/
-.skill {
-  padding-top: 100px;
-}
-
-.skill .skill_img img {
-  width: 100%;
-}
-
-.skill .skill_wraper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.skill .skill_wraper .tools_expert {
-  width: 100%;
-  padding: 20px 0px 0px 0px;
-}
-
-.skill .skill_wraper .tools_expert .skill_item {
-  margin-bottom: 15px;
-}
-
-.skill .skill_wraper .tools_expert .skill_item h5 {
-  font-weight: 200;
-}
-
-.skill .skill_wraper .tools_expert .skill_item .progress {
-  overflow: visible;
-  height: 4px;
-}
-
-.skill .skill_wraper .tools_expert .skill_item .progress .progress_bar {
-  background-color: #57d131;
-  position: relative;
-  border-radius: 4px;
-}
-
-.skill .skill_wraper .tools_expert .skill_item .progress .progress_bar span {
-  background-color: #57d131;
-  position: absolute;
-  bottom: -20px;
-  font-size: 10px;
-  line-height: 10px;
-  padding: 2px 3px 2px 4px;
-  right: -1.4em;
-  border-radius: 2px;
-}
-
-.skill .skill_wraper .tools_expert .skill_item .progress .progress_bar span:after {
-  bottom: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: #57d131;
-  border-width: 5px;
-  margin-left: -5px;
-}
-
 /*---------- Resume Style-------*/
 .resume .granduate {
   width: 100%;
-  padding-left: 44px;
 }
 
-.resume .granduate::before {
-  position: absolute;
-  width: 1px;
-  height: 380px;
-  background-color: #3b3b3b;
-  left: 22px;
-  content: "";
-  z-index: 0;
-}
-
-.resume .granduate .graduate_title {
-  height: 42px;
+.resume .granduate .graduate-title {
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-bottom: 10px;
+  border-left: 1px solid;
   z-index: 1;
 }
 
-.resume .granduate .graduate_title i {
+.resume .granduate .graduate-title i {
   color: #f3f3f3;
   background: #ff724c;
   padding: 13px 12px;
@@ -944,14 +840,14 @@ header .intro-text p {
   border-radius: 100%;
   margin-right: 15px;
   position: absolute;
-  left: 1px;
+  left: -5px;
 }
 
-.resume .granduate .graduate_title .fa-briefcase {
+.resume .granduate .graduate-title .fa-briefcase {
   padding: 13px 14px;
 }
 
-.resume .granduate .graduate_title h4 {
+.resume .granduate .graduate-title h4 {
   text-align: center;
   width: 100%;
   margin-top: 6px;
@@ -959,7 +855,12 @@ header .intro-text p {
 
 .resume .granduate .items {
   z-index: 1;
-  padding-top: 10px;
+  padding-left: 44px;
+  border-left: 1px solid;
+}
+
+.resume .granduate .items:last-child {
+  border-left: none;
 }
 
 .resume .granduate .items:hover {
@@ -975,16 +876,16 @@ header .intro-text p {
   color: #ff724c;
   font-size: 10px;
   position: absolute;
-  left: 18px;
+  left: 11px;
   background-color: white;
 }
 
 .resume .granduate .items h6 {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .resume .granduate .items h6 span {
-  font-size: 14px;
+  font-size: 17px;
   color: #8e8e90;
   margin: 0px auto;
 }
@@ -997,14 +898,105 @@ header .intro-text p {
 }
 
 .resume .granduate .items p {
-  font-size: 15px;
   font-weight: 400;
   color: #8e8e90;
   margin-top: 7px;
   line-height: 23px;
+  margin: 0;
+  padding-bottom: 10px;
 }
 
-.resume .work::before {
-  height: 350px;
+/*---------- Skils Style-------*/
+.skill .skill-img img {
+  width: 100%;
+}
+
+.skill .skill-wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.skill .skill-wraper .tools-expert {
+  width: 100%;
+  padding: 20px 0px 0px 0px;
+}
+
+.skill .skill-wraper .tools-expert .skill-item {
+  margin-bottom: 15px;
+}
+
+.skill .skill-wraper .tools-expert .skill-item h5 {
+  font-weight: 200;
+}
+
+.skill .skill-wraper .tools-expert .skill-item .progress {
+  overflow: visible;
+  height: 4px;
+}
+
+.skill .skill-wraper .tools-expert .skill-item .progress .progress-bar {
+  background-color: #57d131;
+  position: relative;
+  border-radius: 4px;
+}
+
+.skill .skill-wraper .tools-expert .skill-item .progress .progress-bar span {
+  background-color: #57d131;
+  position: absolute;
+  bottom: -20px;
+  font-size: 10px;
+  line-height: 10px;
+  padding: 2px 3px 2px 4px;
+  right: -1.4em;
+  border-radius: 2px;
+}
+
+.skill .skill-wraper .tools-expert .skill-item .progress .progress-bar span:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #57d131;
+  border-width: 5px;
+  margin-left: -5px;
+}
+
+/*---------- scrollUp Style-------*/
+.scrollUp {
+  background: #8e8e90;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  right: 31px;
+  bottom: 18px;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border: none;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+.scrollUp:hover {
+  color: #ff724c;
 }
 /*# sourceMappingURL=main.css.map */
