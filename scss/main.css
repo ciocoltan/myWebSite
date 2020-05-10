@@ -348,7 +348,7 @@ section {
 .btn {
   border-radius: 100px;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   background: #8e8e90;
   color: #fff;
   display: inline-block;
@@ -379,6 +379,7 @@ section {
           transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
+  z-index: -1;
 }
 
 .btn:hover {
@@ -811,7 +812,7 @@ header .intro-text .social-icon li .yahoo i:hover {
 
 /*---------- About Style-------*/
 .about-us .title {
-  padding: 0 45px 0 0;
+  padding: 0 45px 30px 0;
 }
 
 .about-us .about-left-content h3 {
@@ -822,6 +823,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   padding-bottom: 10px;
 }
 
+/*---------- Services Style-------*/
 .services .service-content {
   padding: 30px 10px;
   border-radius: 5%;
@@ -831,7 +833,7 @@ header .intro-text .social-icon li .yahoo i:hover {
 }
 
 .services .service-content::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -846,7 +848,7 @@ header .intro-text .social-icon li .yahoo i:hover {
 
 .services .service-content:hover::before {
   padding: 40px;
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -877,29 +879,17 @@ header .intro-text .social-icon li .yahoo i:hover {
 }
 
 /*---------- Portfolio Style-------*/
-.portfolio .portofolio-content {
+.portfolio .button-group {
+  margin: 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.portfolio .portofolio-content .title {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.portfolio .portofolio-content .filter-buttons {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-}
-
-.portfolio .portofolio-content .filter-buttons .button-group {
-  margin: 50px 0;
-}
-
-.portfolio .portofolio-content .filter-buttons .button-group .button {
+.portfolio .button-group .button {
   color: #8e8e90;
   border: medium none;
   cursor: pointer;
@@ -911,30 +901,30 @@ header .intro-text .social-icon li .yahoo i:hover {
   outline: none;
 }
 
-.portfolio .portofolio-content .filter-buttons .button-group .button:before {
+.portfolio .button-group .button:before {
   position: absolute;
   content: "..";
   top: 0;
   right: -40px;
 }
 
-.portfolio .portofolio-content .filter-buttons .button-group .button:last-child:before {
+.portfolio .button-group .button:last-child:before {
   display: none;
 }
 
-.portfolio .portofolio-content .filter-buttons .button-group .button:hover {
+.portfolio .button-group .button:hover {
   color: #fa6231;
 }
 
-.portfolio .portofolio-content .filter-buttons .button-group .button.active {
+.portfolio .button-group .button.active {
   color: #fa6231;
 }
 
-.portfolio .portofolio-content .filter-buttons .button-group .button.active:before {
+.portfolio .button-group .button.active:before {
   color: #8e8e90;
 }
 
-.portfolio .portfolio-img .img-container {
+.portfolio .img-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -942,21 +932,20 @@ header .intro-text .social-icon li .yahoo i:hover {
       flex-wrap: wrap;
 }
 
-.portfolio .portfolio-img .img-container .img-item {
-  width: 33.33%;
+.portfolio .img-container .img-item {
   padding: 10px;
 }
 
-.portfolio .portfolio-img .img-container .img-item figure {
+.portfolio .img-container .img-item figure {
   position: relative;
   overflow: hidden;
 }
 
-.portfolio .portfolio-img .img-container .img-item figure img {
+.portfolio .img-container .img-item figure img {
   width: 100%;
 }
 
-.portfolio .portfolio-img .img-container .img-item figure figcaption a {
+.portfolio .img-container .img-item figure figcaption a {
   background: #fa6331bb;
   content: "";
   height: 100%;
@@ -972,7 +961,7 @@ header .intro-text .social-icon li .yahoo i:hover {
           transform: scale(0.8);
 }
 
-.portfolio .portfolio-img .img-container .img-item figure:hover figcaption a {
+.portfolio .img-container .img-item figure:hover figcaption a {
   visibility: visible;
   opacity: 0.3;
   -webkit-transform: scale(1);
@@ -991,6 +980,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   display: flex;
   padding-bottom: 10px;
   border-left: 1px solid;
+  margin-left: 14px;
   z-index: 1;
 }
 
@@ -1002,7 +992,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   border-radius: 100%;
   margin-right: 15px;
   position: absolute;
-  left: -5px;
+  left: 8px;
 }
 
 .resume .granduate .graduate-title .fa-briefcase {
@@ -1019,6 +1009,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   z-index: 1;
   padding-left: 44px;
   border-left: 1px solid;
+  margin-left: 14px;
 }
 
 .resume .granduate .items:last-child {
@@ -1038,7 +1029,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   color: #ff724c;
   font-size: 10px;
   position: absolute;
-  left: 11px;
+  left: 25px;
   background-color: white;
 }
 
@@ -1068,7 +1059,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   padding-bottom: 10px;
 }
 
-/*---------- Skils Style-------*/
+/*---------- Skills Style-------*/
 .skill {
   padding-top: 100px;
 }
@@ -1080,6 +1071,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .skill .skill-img img {
@@ -1144,6 +1136,50 @@ header .intro-text .social-icon li .yahoo i:hover {
   margin-left: -5px;
 }
 
+/*---------- Contact Style-------*/
+.contact .spinner-border {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  z-index: 99;
+}
+
+.contact .spinner-show {
+  visibility: visible;
+}
+
+.contact .contact_form {
+  -webkit-animation: zoomIn 3s;
+          animation: zoomIn 3s;
+  margin: 0 auto;
+}
+
+.contact .contact_form .btn {
+  border-radius: 30px;
+  border: none;
+  color: #3b3b3b;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0px 15px 0px 0px;
+  background-color: #f3f3f3;
+  margin-top: 20px;
+  outline: none;
+}
+
+.contact .contact_form .btn i {
+  color: #f3f3f3;
+  background: #8e8e90;
+  margin-right: 14px;
+  padding: 15px 20px;
+  font-size: 11px;
+  border-radius: 30px 0% 0% 30px;
+}
+
+.contact .contact_form .btn:hover i {
+  color: #ff724c;
+}
+
 /*---------- scrollUp Style-------*/
 .scrollUp {
   background: #8e8e90;
@@ -1172,5 +1208,21 @@ header .intro-text .social-icon li .yahoo i:hover {
 
 .scrollUp:hover {
   color: #ff724c;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio .button-group .button {
+    font-size: 17px;
+    padding-left: 20px !important;
+  }
+  .portfolio .button-group .button::before {
+    content: "";
+  }
+}
+
+@media screen and (max-width: 400px) {
+  svg text {
+    font-size: 30px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

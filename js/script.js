@@ -8,6 +8,50 @@ function init() {
   typeWriter();
   galery();
   btnScrollUp();
+  contactForm();
+}
+
+function contactForm() {
+  const btn = document.getElementById("send_email");
+  btn.addEventListener("click", sendEmail, false);
+}
+
+function sendEmail() {
+  const contactForm = document.getElementById("contact-form");
+  contactForm.classList.add("was-validated");
+  console.log(contactForm.firstName.value);
+  if (contactForm.checkValidity() === false) {
+    event.preventDefault();
+    event.stopPropagation();
+  } else {
+    const firstName = document.getElementById("contactName").value;
+    const email = document.getElementById("contactEmail").value;
+    const message = document.getElementById("contactTextarea").value;
+    const btn = document.getElementById("send_email");
+    const spinner = document.getElementById("spinner-form");
+    btn.disabled = true;
+    spinner.classList.toggle("spinner-show");
+
+    Email.send({
+      Host: "uk34.myserverhosts.com",
+      Username: "test@prestigeconsultants.net",
+      Password: "Nikolaus1",
+      To: "test@prestigeconsultants.net",
+      From: email,
+      Subject: "Email from personal Wibesite",
+      Body: `<html><h2>Email from ${firstName}</h2><p><strong>${message}</strong></p></html>`,
+    }).then((res) => {
+      res == "OK" ?
+        alert("Your message was sent successfully! ") :
+        alert("error");
+      btn.disabled = false;
+      spinner.classList.toggle("spinner-show");
+      contactForm.firstName.value = "";
+      contactForm.contactEmail.value = "";
+      contactForm.contactText.value = "";
+      contactForm.classList.remove("was-validated");
+    });
+  }
 }
 
 function btnScrollUp() {

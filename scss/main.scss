@@ -7,8 +7,7 @@ $title: #222129;
 $green: #37c978;
 $resumeColor: #ff724c;
 // $poppins: "Times New Roman", Times, serif, sans-serif;
-$poppins: "Raleway",
-sans-serif;
+$poppins: "Raleway", sans-serif;
 $t_sc: all 0.3s ease-in-out;
 
 * {
@@ -105,7 +104,7 @@ section {
 .btn {
   border-radius: 100px;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   background: $primary;
   color: #fff;
   display: inline-block;
@@ -128,24 +127,24 @@ section {
     transform-origin: 0 0;
     transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
     transform: scaleX(0);
+    z-index: -1;
   }
 
   &:hover {
-    color: #fff
+    color: #fff;
   }
 
   &:hover::before {
     transform: scaleX(1);
     color: #fff !important;
-    z-index: -1
+    z-index: -1;
   }
 
   &:focus {
     outline: 0;
-    box-shadow: none
+    box-shadow: none;
   }
 }
-
 
 /*---------- Loader Style-------*/
 #loader-wrapper {
@@ -261,11 +260,10 @@ svg {
   transition: fill 15s;
 
   text {
-    // width: 100%;
     font-size: 40px;
     letter-spacing: -2px;
 
-    tspan>tspan {
+    tspan > tspan {
       stroke-dasharray: 150;
       stroke-dashoffset: -150;
 
@@ -463,7 +461,7 @@ header {
 /*---------- About Style-------*/
 .about-us {
   .title {
-    padding: 0 45px 0 0;
+    padding: 0 45px 30px 0;
   }
 
   .about-left-content {
@@ -477,14 +475,16 @@ header {
   }
 }
 
+/*---------- Services Style-------*/
 .services {
   .service-content {
     padding: 30px 10px;
     border-radius: 5%;
     position: relative;
     transition: all 1s ease;
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0px;
       left: 0px;
@@ -495,20 +495,22 @@ header {
       transition: all 1s ease;
       z-index: -1;
     }
+
     &:hover::before {
       padding: 40px;
-      content: '';
+      content: "";
       position: absolute;
       top: 0px;
       left: 0px;
       width: 100%;
       height: 100%;
       background-color: #f3f3f3;
-      padding:30px 10px;
+      padding: 30px 10px;
       border-radius: 5%;
       transition: all 1s ease;
       z-index: -1;
     }
+
     .service-icon {
       display: flex;
       justify-content: center;
@@ -525,100 +527,87 @@ header {
 
 /*---------- Portfolio Style-------*/
 .portfolio {
-  .portofolio-content {
+  .button-group {
+    margin: 50px 0;
     display: flex;
+    justify-content: center;
 
-    .title {
-      flex: 1;
-    }
+    .button {
+      color: $primary;
+      border: medium none;
+      cursor: pointer;
+      font-size: 17px;
+      padding-left: 70px;
+      position: relative;
+      text-transform: uppercase;
+      background: transparent;
+      outline: none;
 
-    .filter-buttons {
-      flex: 2;
+      &:before {
+        position: absolute;
+        content: "..";
+        top: 0;
+        right: -40px;
+      }
 
-      .button-group {
-        margin: 50px 0;
+      &:last-child {
+        &:before {
+          display: none;
+        }
+      }
 
-        .button {
+      &:hover {
+        color: #fa6231;
+      }
+
+      &.active {
+        color: #fa6231;
+
+        &:before {
           color: $primary;
-          border: medium none;
-          cursor: pointer;
-          font-size: 17px;
-          padding-left: 70px;
-          position: relative;
-          text-transform: uppercase;
-          background: transparent;
-          outline: none;
-
-          &:before {
-            position: absolute;
-            content: "..";
-            top: 0;
-            right: -40px;
-          }
-
-          &:last-child {
-            &:before {
-              display: none;
-            }
-          }
-
-          &:hover {
-            color: #fa6231;
-          }
-
-          &.active {
-            color: #fa6231;
-
-            &:before {
-              color: $primary;
-            }
-          }
         }
       }
     }
   }
 
-  .portfolio-img {
-    .img-container {
-      display: flex;
-      flex-wrap: wrap;
+  .img-container {
+    display: flex;
+    flex-wrap: wrap;
 
-      .img-item {
-        width: 33.33%;
-        padding: 10px;
+    .img-item {
+      padding: 10px;
 
-        figure {
-          position: relative;
-          overflow: hidden;
+      figure {
+        position: relative;
+        overflow: hidden;
 
-          img {
+        img {
+          width: 100%;
+        }
+
+        figcaption {
+          a {
+            background: #fa6331bb;
+            content: "";
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
             width: 100%;
+            visibility: hidden;
+            transition: $t_sc;
+            // cursor: url("../images/cursor.png"), auto;
+            transform: scale(0.8);
           }
+        }
 
+        &:hover {
           figcaption {
             a {
-              background: #fa6331bb;
-              content: "";
-              height: 100%;
-              left: 0;
-              opacity: 0;
-              position: absolute;
-              top: 0;
-              width: 100%;
-              visibility: hidden;
-              transition: $t_sc;
-              // cursor: url("../images/cursor.png"), auto;
-              transform: scale(0.8);
-            }
-          }
-
-          &:hover {
-            figcaption {
-              a {
-                visibility: visible;
-                opacity: 0.3;
-                transform: scale(1);
-              }
+              visibility: visible;
+              opacity: 0.3;
+              transform: scale(1);
             }
           }
         }
@@ -632,13 +621,13 @@ header {
 .resume {
   .granduate {
     width: 100%;
-    // padding-left: 44px;
 
     .graduate-title {
       height: 50px;
       display: flex;
       padding-bottom: 10px;
       border-left: 1px solid;
+      margin-left: 14px;
       z-index: 1;
 
       i {
@@ -649,7 +638,7 @@ header {
         border-radius: 100%;
         margin-right: 15px;
         position: absolute;
-        left: -5px;
+        left: 8px;
       }
 
       .fa-briefcase {
@@ -667,6 +656,7 @@ header {
       z-index: 1;
       padding-left: 44px;
       border-left: 1px solid;
+      margin-left: 14px;
 
       &:last-child {
         border-left: none;
@@ -685,7 +675,7 @@ header {
         color: $resumeColor;
         font-size: 10px;
         position: absolute;
-        left: 11px;
+        left: 25px;
         background-color: white;
       }
 
@@ -718,13 +708,14 @@ header {
   }
 }
 
-/*---------- Skils Style-------*/
+/*---------- Skills Style-------*/
 .skill {
   padding-top: 100px;
 
   .skill-img {
     align-items: center;
     display: flex;
+    margin-bottom: 20px;
 
     img {
       width: 100%;
@@ -784,7 +775,52 @@ header {
       }
     }
   }
+}
 
+/*---------- Contact Style-------*/
+
+.contact {
+  .spinner-border {
+    visibility: hidden;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    z-index: 99;
+  }
+
+  .spinner-show {
+    visibility: visible;
+  }
+
+  .contact_form {
+    animation: zoomIn 3s;
+    margin: 0 auto;
+
+    .btn {
+      border-radius: 30px;
+      border: none;
+      color: #3b3b3b;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 0px 15px 0px 0px;
+      background-color: #f3f3f3;
+      margin-top: 20px;
+      outline: none;
+
+      i {
+        color: #f3f3f3;
+        background: $primary;
+        margin-right: 14px;
+        padding: 15px 20px;
+        font-size: 11px;
+        border-radius: 30px 0% 0% 30px;
+      }
+
+      &:hover i {
+        color: $resumeColor;
+      }
+    }
+  }
 }
 
 /*---------- scrollUp Style-------*/
@@ -809,5 +845,25 @@ header {
 
   &:hover {
     color: $resumeColor;
+  }
+}
+@media screen and (max-width: 768px) {
+  .portfolio {
+    .button-group {
+      .button {
+        font-size: 17px;
+        padding-left: 20px !important;
+        &::before {
+          content: "";
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  svg {
+    text {
+      font-size: 30px;
+    }
   }
 }
