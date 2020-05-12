@@ -24,14 +24,40 @@
           animation-name: skills;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
+  display: block;
 }
 
-.animated.delay-1s {
+.delay-350ms {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.delay-3s {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.delay-250ms {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.delay-2s {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.delay-150ms {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.delay-1s {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-.animated.delay-50ms {
+.delay-50ms {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
@@ -254,13 +280,75 @@
           animation-name: zoomOut;
 }
 
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+          animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+          animation-name: fadeInRight;
+}
+
 /* Variables */
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Raleway", sans-serif, sans-serif;
+  font-family: "Times New Roman", Times, serif, sans-serif, sans-serif;
 }
 
 html {
@@ -272,7 +360,7 @@ body {
   font-size: 16px;
   line-height: 25px;
   font-weight: 400;
-  font-family: "Raleway", sans-serif;
+  font-family: "Times New Roman", Times, serif, sans-serif;
 }
 
 h1,
@@ -282,7 +370,7 @@ h4,
 h5,
 h6 {
   color: #222129;
-  font-family: "Raleway", sans-serif;
+  font-family: "Times New Roman", Times, serif, sans-serif;
   margin: 0;
 }
 
@@ -316,15 +404,15 @@ section {
 .section-title {
   margin-bottom: 40px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  text-align: end;
+  text-align: right;
   max-width: 350px;
 }
 
 .section-title span {
   font-weight: 800;
-  color: #000;
+  color: #8e8e90;
 }
 
 .section-title .title {
@@ -348,6 +436,7 @@ section {
 .btn {
   border-radius: 100px;
   text-transform: uppercase;
+  font-weight: 600;
   letter-spacing: 0.1em;
   background: #8e8e90;
   color: #fff;
@@ -672,7 +761,7 @@ header .navbar .fa-bars:before {
 }
 
 header .navbar .nav-item {
-  padding: 0 25px;
+  padding: 0 20px;
 }
 
 header .navbar .nav-item .nav-link {
@@ -719,7 +808,7 @@ header .intro-text .subheading {
   letter-spacing: 2px;
 }
 
-header .intro-text h2 {
+header .intro-text p {
   color: #ffffff;
   font-size: 23px;
   font-weight: 500;
@@ -727,7 +816,7 @@ header .intro-text h2 {
   letter-spacing: 2px;
 }
 
-header .intro-text h2 .wrap {
+header .intro-text p .wrap {
   border-right: 0.06em solid #fff;
 }
 
@@ -890,7 +979,7 @@ header .intro-text .social-icon li .yahoo i:hover {
 }
 
 .portfolio .button-group .button {
-  color: #8e8e90;
+  color: #818181;
   border: medium none;
   cursor: pointer;
   font-size: 17px;
@@ -969,6 +1058,10 @@ header .intro-text .social-icon li .yahoo i:hover {
 }
 
 /*---------- Resume Style-------*/
+.resume {
+  /*---------- Skills Style-------*/
+}
+
 .resume .granduate {
   width: 100%;
 }
@@ -999,7 +1092,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   padding: 13px 14px;
 }
 
-.resume .granduate .graduate-title h4 {
+.resume .granduate .graduate-title h3 {
   text-align: center;
   width: 100%;
   margin-top: 6px;
@@ -1033,11 +1126,11 @@ header .intro-text .social-icon li .yahoo i:hover {
   background-color: white;
 }
 
-.resume .granduate .items h6 {
+.resume .granduate .items h4 {
   font-size: 18px;
 }
 
-.resume .granduate .items h6 span {
+.resume .granduate .items h4 span {
   font-size: 17px;
   color: #8e8e90;
   margin: 0px auto;
@@ -1059,12 +1152,11 @@ header .intro-text .social-icon li .yahoo i:hover {
   padding-bottom: 10px;
 }
 
-/*---------- Skills Style-------*/
-.skill {
+.resume .skill {
   padding-top: 100px;
 }
 
-.skill .skill-img {
+.resume .skill .skill-img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1074,11 +1166,11 @@ header .intro-text .social-icon li .yahoo i:hover {
   margin-bottom: 20px;
 }
 
-.skill .skill-img img {
+.resume .skill .skill-img img {
   width: 100%;
 }
 
-.skill .skill-wrapper {
+.resume .skill .skill-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1087,30 +1179,31 @@ header .intro-text .social-icon li .yahoo i:hover {
           align-items: flex-end;
 }
 
-.skill .skill-wrapper .tools-expert {
+.resume .skill .skill-wrapper .tools-expert {
   width: 100%;
 }
 
-.skill .skill-wrapper .tools-expert .skill-item {
+.resume .skill .skill-wrapper .tools-expert .skill-item {
   margin-bottom: 15px;
 }
 
-.skill .skill-wrapper .tools-expert .skill-item h5 {
+.resume .skill .skill-wrapper .tools-expert .skill-item h4 {
   font-weight: 200;
+  font-size: 20px;
 }
 
-.skill .skill-wrapper .tools-expert .skill-item .progress {
+.resume .skill .skill-wrapper .tools-expert .skill-item .progress {
   overflow: visible;
   height: 4px;
 }
 
-.skill .skill-wrapper .tools-expert .skill-item .progress .progress_bar {
+.resume .skill .skill-wrapper .tools-expert .skill-item .progress .progress_bar {
   background-color: #57d131;
   position: relative;
   border-radius: 4px;
 }
 
-.skill .skill-wrapper .tools-expert .skill-item .progress .progress_bar span {
+.resume .skill .skill-wrapper .tools-expert .skill-item .progress .progress_bar span {
   background-color: #57d131;
   position: absolute;
   bottom: -20px;
@@ -1121,7 +1214,7 @@ header .intro-text .social-icon li .yahoo i:hover {
   border-radius: 2px;
 }
 
-.skill .skill-wrapper .tools-expert .skill-item .progress .progress_bar span:after {
+.resume .skill .skill-wrapper .tools-expert .skill-item .progress .progress_bar span:after {
   bottom: 100%;
   left: 50%;
   border: solid transparent;
@@ -1208,6 +1301,82 @@ header .intro-text .social-icon li .yahoo i:hover {
 
 .scrollUp:hover {
   color: #ff724c;
+}
+
+/*---------- communication Style-------*/
+.communication {
+  background: #282828;
+  margin-top: 100px;
+  color: #f3f3f3;
+  border-radius: 10px 10px 0 0;
+  z-index: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.communication .contactPhone,
+.communication .contactMail,
+.communication .location {
+  padding-top: 23px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.communication a {
+  height: 35px;
+  width: 35px;
+  margin: 8px 15px 0 20px;
+}
+
+.communication a i {
+  color: #ff724c;
+  background: #f3f3f3;
+  border-radius: 100%;
+  padding: 7px 7px;
+  font-size: 12px;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.communication a i:hover {
+  color: #f3f3f3;
+  background: #ff724c;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.communication a .fa-map-marker-alt {
+  padding: 7px 9px;
+}
+
+.communication p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/*---------- footer Style-------*/
+.footer {
+  background-color: #f3f3f3;
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.footer h4 {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 14px;
+  color: #818181;
 }
 
 @media screen and (max-width: 768px) {

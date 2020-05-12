@@ -9,6 +9,7 @@ function init() {
   galery();
   btnScrollUp();
   contactForm();
+  copyrightYear();
 }
 
 function contactForm() {
@@ -65,8 +66,9 @@ function typeWriter() {
   const element = document.getElementById("typeWriter");
   const toWrite = element.getAttribute("data-text");
   const period = element.getAttribute("data-period");
+
   if (toWrite) {
-    let test = new TxtWrite(element, JSON.parse(toWrite), period);
+    let test = new TxtWrite(element, toWrite.split(','), period);
     test.tick();
   }
 }
@@ -107,7 +109,6 @@ class TxtWrite {
     }, delta);
   };
 }
-
 
 function navBar() {
   const headerId = document.getElementById("navbar");
@@ -164,7 +165,6 @@ function galery() {
   }
 }
 
-
 function navScroll() {
   const headerId = document.getElementById("navbar");
   if (document.documentElement.scrollTop > 28) {
@@ -176,4 +176,10 @@ function navScroll() {
     let existingIndex = headerId.className.indexOf("lab-navbar");
     if (existingIndex !== -1) headerId.classList.remove("lab-navbar");
   }
+}
+
+function copyrightYear() {
+  const copyrightYear = document.getElementById("copyright-year");
+  const date = new Date();
+  copyrightYear.innerHTML = date.getFullYear();
 }

@@ -6,8 +6,8 @@ $white: #ffffff;
 $title: #222129;
 $green: #37c978;
 $resumeColor: #ff724c;
-// $poppins: "Times New Roman", Times, serif, sans-serif;
-$poppins: "Raleway", sans-serif;
+$poppins: "Times New Roman", Times, serif, sans-serif;
+// $poppins: "Raleway", sans-serif;
 $t_sc: all 0.3s ease-in-out;
 
 * {
@@ -70,14 +70,14 @@ section {
 .section-title {
   margin-bottom: 40px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  text-align: end;
+  text-align: right;
   max-width: 350px;
 
   span {
     font-weight: 800;
-    color: #000;
+    color: $primary;
   }
 
   .title {
@@ -104,6 +104,7 @@ section {
 .btn {
   border-radius: 100px;
   text-transform: uppercase;
+  font-weight: 600;
   letter-spacing: 0.1em;
   background: $primary;
   color: #fff;
@@ -320,7 +321,7 @@ header {
     }
 
     .nav-item {
-      padding: 0 25px;
+      padding: 0 20px;
 
       .nav-link {
         color: $white;
@@ -368,7 +369,7 @@ header {
       letter-spacing: 2px;
     }
 
-    h2 {
+    p {
       color: $white;
       font-size: 23px;
       font-weight: 500;
@@ -533,7 +534,7 @@ header {
     justify-content: center;
 
     .button {
-      color: $primary;
+      color: #818181;
       border: medium none;
       cursor: pointer;
       font-size: 17px;
@@ -645,7 +646,7 @@ header {
         padding: 13px 14px;
       }
 
-      h4 {
+      h3 {
         text-align: center;
         width: 100%;
         margin-top: 6px;
@@ -679,7 +680,7 @@ header {
         background-color: white;
       }
 
-      h6 {
+      h4 {
         font-size: 18px;
 
         span {
@@ -706,68 +707,68 @@ header {
       }
     }
   }
-}
+  /*---------- Skills Style-------*/
+  .skill {
+    padding-top: 100px;
 
-/*---------- Skills Style-------*/
-.skill {
-  padding-top: 100px;
+    .skill-img {
+      align-items: center;
+      display: flex;
+      margin-bottom: 20px;
 
-  .skill-img {
-    align-items: center;
-    display: flex;
-    margin-bottom: 20px;
-
-    img {
-      width: 100%;
+      img {
+        width: 100%;
+      }
     }
-  }
 
-  .skill-wrapper {
-    display: flex;
-    align-items: flex-end;
+    .skill-wrapper {
+      display: flex;
+      align-items: flex-end;
 
-    .tools-expert {
-      width: 100%;
+      .tools-expert {
+        width: 100%;
 
-      .skill-item {
-        margin-bottom: 15px;
+        .skill-item {
+          margin-bottom: 15px;
 
-        h5 {
-          font-weight: 200;
-        }
+          h4 {
+            font-weight: 200;
+            font-size: 20px;
+          }
 
-        .progress {
-          overflow: visible;
-          height: 4px;
+          .progress {
+            overflow: visible;
+            height: 4px;
 
-          .progress_bar {
-            background-color: #57d131;
-            position: relative;
-            border-radius: 4px;
-
-            span {
+            .progress_bar {
               background-color: #57d131;
-              position: absolute;
-              bottom: -20px;
-              font-size: 10px;
-              line-height: 10px;
-              padding: 2px 3px 2px 4px;
-              right: -1.4em;
-              border-radius: 2px;
+              position: relative;
+              border-radius: 4px;
 
-              &:after {
-                bottom: 100%;
-                left: 50%;
-                border: solid transparent;
-                content: " ";
-                height: 0;
-                width: 0;
+              span {
+                background-color: #57d131;
                 position: absolute;
-                pointer-events: none;
-                border-color: rgba(255, 255, 255, 0);
-                border-bottom-color: #57d131;
-                border-width: 5px;
-                margin-left: -5px;
+                bottom: -20px;
+                font-size: 10px;
+                line-height: 10px;
+                padding: 2px 3px 2px 4px;
+                right: -1.4em;
+                border-radius: 2px;
+
+                &:after {
+                  bottom: 100%;
+                  left: 50%;
+                  border: solid transparent;
+                  content: " ";
+                  height: 0;
+                  width: 0;
+                  position: absolute;
+                  pointer-events: none;
+                  border-color: rgba(255, 255, 255, 0);
+                  border-bottom-color: #57d131;
+                  border-width: 5px;
+                  margin-left: -5px;
+                }
               }
             }
           }
@@ -847,12 +848,80 @@ header {
     color: $resumeColor;
   }
 }
+
+/*---------- communication Style-------*/
+.communication {
+  background: #282828;
+  margin-top: 100px;
+  color: #f3f3f3;
+  border-radius: 10px 10px 0 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  animation-duration: 3s;
+
+  .contactPhone,
+  .contactMail,
+  .location {
+    padding-top: 23px;
+    text-align: left;
+    display: flex;
+  }
+
+  a {
+    height: 35px;
+    width: 35px;
+    margin: 8px 15px 0 20px;
+
+    i {
+      color: $resumeColor;
+      background: #f3f3f3;
+      border-radius: 100%;
+      padding: 7px 7px;
+      font-size: 12px;
+      transform: rotate(0);
+
+      &:hover {
+        color: #f3f3f3;
+        background: $resumeColor;
+        transform: rotate(360deg);
+        transition: 0.5s ease;
+      }
+    }
+
+    .fa-map-marker-alt {
+      padding: 7px 9px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+/*---------- footer Style-------*/
+.footer {
+  background-color: #f3f3f3;
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  animation-duration: 3s;
+
+  h4 {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 14px;
+    color: #818181;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .portfolio {
     .button-group {
       .button {
         font-size: 17px;
         padding-left: 20px !important;
+
         &::before {
           content: "";
         }
@@ -860,6 +929,7 @@ header {
     }
   }
 }
+
 @media screen and (max-width: 400px) {
   svg {
     text {

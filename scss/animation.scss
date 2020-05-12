@@ -13,13 +13,34 @@
 .skills {
     animation-name: skills;
     animation-duration: 2s;
+    display: block;
 }
 
-.animated.delay-1s {
+.delay-350ms {
+    animation-delay: 3.5s;
+}
+
+.delay-3s {
+    animation-delay: 3s;
+}
+
+.delay-250ms {
+    animation-delay: 2.5s;
+}
+
+.delay-2s {
+    animation-delay: 2s;
+}
+
+.delay-150ms {
+    animation-delay: 1.5s;
+}
+
+.delay-1s {
     animation-delay: 1s;
 }
 
-.animated.delay-50ms {
+.delay-50ms {
     animation-delay: 0.5s;
 }
 
@@ -150,4 +171,36 @@
 
 .zoomOut {
     animation-name: zoomOut;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.fadeInRight {
+    animation-name: fadeInRight
 }
