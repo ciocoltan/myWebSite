@@ -139,21 +139,6 @@
     animation-name: zoomIn;
 }
 
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale3d(0.3, 0.3, 0.3);
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-.zoomIn {
-    animation-name: zoomIn;
-}
-
 @keyframes zoomOut {
     from {
         opacity: 1;
@@ -203,4 +188,20 @@
 
 .fadeInRight {
     animation-name: fadeInRight
+}
+
+@keyframes scrollUp {
+    from {
+        background-position: center 0%;
+    }
+
+    to {
+        background-position: center 100%;
+    }
+}
+
+@keyframes scrollDown {
+    to {
+        background-position: center 0%;
+    }
 }

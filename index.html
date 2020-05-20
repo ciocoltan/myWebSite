@@ -123,9 +123,9 @@
                 </a>
               </li>
             </ul>
-            <div>
-              <a href="#contact" class="btn mr-4 px-4 py-2 btn-sm">Hire Me</a>
-              <a href="pdf/CV.pdf" download="CV_Petru_Ceciltan" class="btn px-4 py-2 btn-sm">Download
+            <div class="header-btn">
+              <a href="#contact" class="btn mr-4 btn-sm">Hire Me</a>
+              <a href="pdf/CV_Petru_Ceciltan.pdf" target="_blank" class="btn btn-sm">Download
                 CV</a>
             </div>
           </div>
@@ -290,67 +290,16 @@
           <h2 class="section-title slideInLeft animated delay-50ms wow">
             <span>My </span>Portfolio
           </h2>
-          <div class="row portofolio-content">
-            <h3 class="slideInLeft animated wow col-lg-4">
-              The Works I Have Done
-            </h3>
-            <div class="filter-buttons col-lg-8">
-              <div class="button-group filters-button-group slideInRight animated wow">
-                <button class="button active" data-filter="*">All</button>
-                <button class="button" data-filter="web">web</button>
-                <button class="button" data-filter="web-design">
-                  web-design
-                </button>
-                <button class="button" data-filter="html5">html5</button>
-              </div>
-            </div>
-          </div>
+          <h3 class="slideInLeft animated wow mb-4">
+            The Works I Have Done
+          </h3>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="portfolio-img">
-            <div class="img-container">
-              <div class="col-12 col-sm-6 col-md-4 img-item animated zoomIn wow" data-category="web-design">
-                <figure>
-                  <img src="./img/portofoliu/portfolio-01.jpg" alt="" class="img-responsive" />
-                </figure>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md-4 img-item animated zoomIn wow" data-category="web web-design html5">
-                <figure>
-                  <img src="./img/portofoliu/portfolio-02.jpg" alt="" class="img-responsive" />
-                </figure>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md-4 img-item animated zoomIn wow" data-category="web-design">
-                <figure>
-                  <img src="./img/portofoliu/portfolio-03.jpg" alt="" class="img-responsive" />
-                </figure>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md-4 img-item animated zoomIn wow" data-category="web html5">
-                <figure>
-                  <img src="./img/portofoliu/portfolio-04.jpg" alt="" class="img-responsive" />
-                </figure>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md-4 img-item animated zoomIn wow" data-category="web">
-                <figure>
-                  <img src="./img/portofoliu/portfolio-05.jpg" alt="" class="img-responsive" />
-                </figure>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md-4 img-item animated zoomIn wow" data-category="html5">
-                <figure>
-                  <img src="./img/portofoliu/portfolio-06.jpg" alt="" class="img-responsive" />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="portfolio-content" class="row"></div>
+      <div class="row justify-content-center">
+        <button id="see-more" class="btn">See more ...</button>
       </div>
     </div>
   </section>
@@ -544,7 +493,6 @@
         </div>
       </div>
     </section>
-
   </section>
   <section id="contact" class="contact">
     <div class="container">
@@ -609,20 +557,18 @@
 
   <div id="map-area">
     <div class="container">
-      <div class="row">
-        <div class="communication animated wow fadeInDown">
-          <div class="col-md-4 contactPhone">
-            <a href="tel:+35797793634" aria-label="+35797793634"><i class="fas fa-phone"></i></a>
-            <p>Contact Number<br>+357-97793634</p>
-          </div>
-          <div class="col-md-4 contactMail">
-            <a href="mailto:ciocoltan@yahoo.com" aria-label="ciocoltan@yahoo.com"><i class="far fa-envelope"></i></a>
-            <p>Email Address<br>ciocoltan@yahoo.com</p>
-          </div>
-          <div class="col-md-4 location">
-            <a href=""><i class="fas fa-map-marker-alt"></i></a>
-            <p>Cyprus, Limasol-3075, Lefkipou Street, 11</p>
-          </div>
+      <div class="row communication animated wow fadeInDown">
+        <div class="col-md-4 contactPhone">
+          <a href="tel:+35797793634" aria-label="+35797793634"><i class="fas fa-phone"></i></a>
+          <p>Contact Number: +357-97793634</p>
+        </div>
+        <div class="col-md-4 contactMail">
+          <a href="mailto:ciocoltan@yahoo.com" aria-label="ciocoltan@yahoo.com"><i class="far fa-envelope"></i></a>
+          <p>Email Address: ciocoltan@yahoo.com</p>
+        </div>
+        <div class="col-md-4 location">
+          <a href=""><i class="fas fa-map-marker-alt"></i></a>
+          <p>Cyprus, Limasol-3075, Lefkipou Street, 11</p>
         </div>
       </div>
     </div>
@@ -630,7 +576,7 @@
   <div id="footer" class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-12 wow fadeInRight">
+        <div class="col-12 fadeInRight">
           <h4>Ceciltan Petru 2019 - <span id="copyright-year"></span> &#169; All rights reserved</h4>
         </div>
       </div>

@@ -6,7 +6,10 @@ $white: #ffffff;
 $title: #222129;
 $green: #37c978;
 $resumeColor: #ff724c;
-$poppins: "Times New Roman", Times, serif, sans-serif;
+$poppins: "Times New Roman",
+Times,
+serif,
+sans-serif;
 // $poppins: "Raleway", sans-serif;
 $t_sc: all 0.3s ease-in-out;
 
@@ -27,7 +30,6 @@ body {
   line-height: 25px;
   font-weight: 400;
   font-family: $poppins;
-  // position: relative;
 }
 
 h1,
@@ -42,7 +44,7 @@ h6 {
 }
 
 p {
-  color: $primary;
+  color: $title;
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
@@ -113,6 +115,7 @@ section {
   z-index: 1;
   border: 0;
   overflow: hidden;
+  padding: 0.5rem 1.5rem;
 
   &::before {
     content: "";
@@ -264,7 +267,7 @@ svg {
     font-size: 40px;
     letter-spacing: -2px;
 
-    tspan > tspan {
+    tspan>tspan {
       stroke-dasharray: 150;
       stroke-dashoffset: -150;
 
@@ -343,7 +346,7 @@ header {
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease-in-out;
 
-    .fa-bars:before {
+    .fa-bars::before {
       color: #333;
     }
 
@@ -456,6 +459,10 @@ header {
         }
       }
     }
+
+    .header-btn {
+      margin-bottom: 50px;
+    }
   }
 }
 
@@ -528,90 +535,83 @@ header {
 
 /*---------- Portfolio Style-------*/
 .portfolio {
-  .button-group {
-    margin: 50px 0;
-    display: flex;
-    justify-content: center;
 
-    .button {
-      color: #818181;
-      border: medium none;
-      cursor: pointer;
-      font-size: 17px;
-      padding-left: 70px;
-      position: relative;
-      text-transform: uppercase;
-      background: transparent;
-      outline: none;
+  .portfolio-item {
+    width: 100%;
+    border: 1px solid #eee;
+    box-shadow: 0px 1px 1px #eee;
+    margin-bottom: 80px;
+    background-color: #fff;
 
-      &:before {
-        position: absolute;
-        content: "..";
-        top: 0;
-        right: -40px;
+    a {
+      color: black;
+
+      .topcurat {
+        background: url(../img/portofoliu/topcuratenie.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
       }
 
-      &:last-child {
-        &:before {
-          display: none;
-        }
+      .prestigeconsultants {
+        background: url(../img/portofoliu/prestigeconsultants.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
       }
 
-      &:hover {
-        color: #fa6231;
+      .personal {
+        background: url(../img/portofoliu/tpl_bu_universal_2_r.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
       }
 
-      &.active {
-        color: #fa6231;
+      .portfolio-img {
+        width: 100%;
+        height: 300px;
+        border-bottom: 1px solid rgb(238, 238, 238);
+        display: flex;
+        flex-wrap: wrap;
 
-        &:before {
-          color: $primary;
-        }
-      }
-    }
-  }
+        .img-eye {
+          position: absolute;
+          padding-top: 30px;
+          padding-left: 30px;
+          z-index: 10;
+          text-align: center;
 
-  .img-container {
-    display: flex;
-    flex-wrap: wrap;
-
-    .img-item {
-      padding: 10px;
-
-      figure {
-        position: relative;
-        overflow: hidden;
-
-        img {
-          width: 100%;
-        }
-
-        figcaption {
-          a {
-            background: #fa6331bb;
-            content: "";
-            height: 100%;
-            left: 0;
+          img {
+            width: 50px;
+            height: 50px;
             opacity: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            visibility: hidden;
-            transition: $t_sc;
-            // cursor: url("../images/cursor.png"), auto;
-            transform: scale(0.8);
+            transition: opacity 2s ease;
           }
         }
 
         &:hover {
-          figcaption {
-            a {
-              visibility: visible;
-              opacity: 0.3;
-              transform: scale(1);
+          animation: scrollUp 4s linear forwards;
+
+          .img-eye {
+            opacity: 1;
+            z-index: 10;
+
+            img {
+              opacity: 1;
             }
           }
         }
+      }
+
+      .portfolio-text {
+        max-width: 100%;
+        margin: 40px 20px;
+
+        .portfolio-title {
+          font-size: 20px;
+          font-weight: 600;
+          height: 50px;
+          overflow: hidden;
+        }
+
+        p {
+          line-height: 20px;
+          margin: 1rem 0;
+          height: 80px;
+          overflow: hidden;
+        }
+
       }
     }
   }
@@ -707,6 +707,7 @@ header {
       }
     }
   }
+
   /*---------- Skills Style-------*/
   .skill {
     padding-top: 100px;
@@ -799,9 +800,7 @@ header {
 
     .btn {
       border-radius: 30px;
-      border: none;
       color: #3b3b3b;
-      font-weight: 600;
       font-size: 13px;
       padding: 0px 15px 0px 0px;
       background-color: #f3f3f3;
@@ -858,20 +857,24 @@ header {
   z-index: 1;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   animation-duration: 3s;
+  margin: 100px 0 0;
+  padding: 23px 0;
 
   .contactPhone,
   .contactMail,
   .location {
-    padding-top: 23px;
     text-align: left;
     display: flex;
+    max-width: 220px;
+    align-items: center;
   }
 
   a {
     height: 35px;
     width: 35px;
-    margin: 8px 15px 0 20px;
+    margin: 8px 15px 0 0;
 
     i {
       color: $resumeColor;
@@ -897,8 +900,11 @@ header {
   p {
     font-size: 16px;
     font-weight: 500;
+    margin: 0;
+    color: $primary;
   }
 }
+
 /*---------- footer Style-------*/
 .footer {
   background-color: #f3f3f3;
@@ -928,7 +934,23 @@ header {
       }
     }
   }
+
+  .communication {
+
+    .contactPhone,
+    .contactMail,
+    .location {
+      padding-top: 3px;
+      max-width: 100%;
+    }
+  }
 }
+
+// @media screen and (max-width: 576px) {
+//   .communication {
+//     justify-content: center;
+//   }
+// }
 
 @media screen and (max-width: 400px) {
   svg {

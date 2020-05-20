@@ -231,22 +231,6 @@
           animation-name: zoomIn;
 }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform: scale3d(0.3, 0.3, 0.3);
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.zoomIn {
-  -webkit-animation-name: zoomIn;
-          animation-name: zoomIn;
-}
-
 @-webkit-keyframes zoomOut {
   from {
     opacity: 1;
@@ -342,6 +326,36 @@
           animation-name: fadeInRight;
 }
 
+@-webkit-keyframes scrollUp {
+  from {
+    background-position: center 0%;
+  }
+  to {
+    background-position: center 100%;
+  }
+}
+
+@keyframes scrollUp {
+  from {
+    background-position: center 0%;
+  }
+  to {
+    background-position: center 100%;
+  }
+}
+
+@-webkit-keyframes scrollDown {
+  to {
+    background-position: center 0%;
+  }
+}
+
+@keyframes scrollDown {
+  to {
+    background-position: center 0%;
+  }
+}
+
 /* Variables */
 * {
   margin: 0;
@@ -375,7 +389,7 @@ h6 {
 }
 
 p {
-  color: #8e8e90;
+  color: #222129;
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
@@ -445,6 +459,7 @@ section {
   z-index: 1;
   border: 0;
   overflow: hidden;
+  padding: 0.5rem 1.5rem;
 }
 
 .btn::before {
@@ -785,7 +800,7 @@ header .lab-navbar {
   transition: all 0.3s ease-in-out;
 }
 
-header .lab-navbar .fa-bars:before {
+header .lab-navbar .fa-bars::before {
   color: #333;
 }
 
@@ -899,6 +914,10 @@ header .intro-text .social-icon li .yahoo i:hover {
   border: 1px solid #6a2ee4;
 }
 
+header .intro-text .header-btn {
+  margin-bottom: 50px;
+}
+
 /*---------- About Style-------*/
 .about-us .title {
   padding: 0 45px 30px 0;
@@ -968,52 +987,35 @@ header .intro-text .social-icon li .yahoo i:hover {
 }
 
 /*---------- Portfolio Style-------*/
-.portfolio .button-group {
-  margin: 50px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.portfolio .portfolio-item {
+  width: 100%;
+  border: 1px solid #eee;
+  -webkit-box-shadow: 0px 1px 1px #eee;
+          box-shadow: 0px 1px 1px #eee;
+  margin-bottom: 80px;
+  background-color: #fff;
 }
 
-.portfolio .button-group .button {
-  color: #818181;
-  border: medium none;
-  cursor: pointer;
-  font-size: 17px;
-  padding-left: 70px;
-  position: relative;
-  text-transform: uppercase;
-  background: transparent;
-  outline: none;
+.portfolio .portfolio-item a {
+  color: black;
 }
 
-.portfolio .button-group .button:before {
-  position: absolute;
-  content: "..";
-  top: 0;
-  right: -40px;
+.portfolio .portfolio-item a .topcurat {
+  background: url(../img/portofoliu/topcuratenie.jpg) center 0%/cover no-repeat #aaaaaa;
 }
 
-.portfolio .button-group .button:last-child:before {
-  display: none;
+.portfolio .portfolio-item a .prestigeconsultants {
+  background: url(../img/portofoliu/prestigeconsultants.jpg) center 0%/cover no-repeat #aaaaaa;
 }
 
-.portfolio .button-group .button:hover {
-  color: #fa6231;
+.portfolio .portfolio-item a .personal {
+  background: url(../img/portofoliu/tpl_bu_universal_2_r.jpg) center 0%/cover no-repeat #aaaaaa;
 }
 
-.portfolio .button-group .button.active {
-  color: #fa6231;
-}
-
-.portfolio .button-group .button.active:before {
-  color: #8e8e90;
-}
-
-.portfolio .img-container {
+.portfolio .portfolio-item a .portfolio-img {
+  width: 100%;
+  height: 300px;
+  border-bottom: 1px solid #eeeeee;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1021,40 +1023,53 @@ header .intro-text .social-icon li .yahoo i:hover {
       flex-wrap: wrap;
 }
 
-.portfolio .img-container .img-item {
-  padding: 10px;
+.portfolio .portfolio-item a .portfolio-img .img-eye {
+  position: absolute;
+  padding-top: 30px;
+  padding-left: 30px;
+  z-index: 10;
+  text-align: center;
 }
 
-.portfolio .img-container .img-item figure {
-  position: relative;
+.portfolio .portfolio-item a .portfolio-img .img-eye img {
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease;
+  transition: opacity 2s ease;
+}
+
+.portfolio .portfolio-item a .portfolio-img:hover {
+  -webkit-animation: scrollUp 4s linear forwards;
+          animation: scrollUp 4s linear forwards;
+}
+
+.portfolio .portfolio-item a .portfolio-img:hover .img-eye {
+  opacity: 1;
+  z-index: 10;
+}
+
+.portfolio .portfolio-item a .portfolio-img:hover .img-eye img {
+  opacity: 1;
+}
+
+.portfolio .portfolio-item a .portfolio-text {
+  max-width: 100%;
+  margin: 40px 20px;
+}
+
+.portfolio .portfolio-item a .portfolio-text .portfolio-title {
+  font-size: 20px;
+  font-weight: 600;
+  height: 50px;
   overflow: hidden;
 }
 
-.portfolio .img-container .img-item figure img {
-  width: 100%;
-}
-
-.portfolio .img-container .img-item figure figcaption a {
-  background: #fa6331bb;
-  content: "";
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  visibility: hidden;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-
-.portfolio .img-container .img-item figure:hover figcaption a {
-  visibility: visible;
-  opacity: 0.3;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+.portfolio .portfolio-item a .portfolio-text p {
+  line-height: 20px;
+  margin: 1rem 0;
+  height: 80px;
+  overflow: hidden;
 }
 
 /*---------- Resume Style-------*/
@@ -1250,9 +1265,7 @@ header .intro-text .social-icon li .yahoo i:hover {
 
 .contact .contact_form .btn {
   border-radius: 30px;
-  border: none;
   color: #3b3b3b;
-  font-weight: 600;
   font-size: 13px;
   padding: 0px 15px 0px 0px;
   background-color: #f3f3f3;
@@ -1314,24 +1327,32 @@ header .intro-text .social-icon li .yahoo i:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
+  margin: 100px 0 0;
+  padding: 23px 0;
 }
 
 .communication .contactPhone,
 .communication .contactMail,
 .communication .location {
-  padding-top: 23px;
   text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 220px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .communication a {
   height: 35px;
   width: 35px;
-  margin: 8px 15px 0 20px;
+  margin: 8px 15px 0 0;
 }
 
 .communication a i {
@@ -1360,6 +1381,8 @@ header .intro-text .social-icon li .yahoo i:hover {
 .communication p {
   font-size: 16px;
   font-weight: 500;
+  margin: 0;
+  color: #8e8e90;
 }
 
 /*---------- footer Style-------*/
@@ -1386,6 +1409,12 @@ header .intro-text .social-icon li .yahoo i:hover {
   }
   .portfolio .button-group .button::before {
     content: "";
+  }
+  .communication .contactPhone,
+  .communication .contactMail,
+  .communication .location {
+    padding-top: 3px;
+    max-width: 100%;
   }
 }
 

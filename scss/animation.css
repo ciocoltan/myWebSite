@@ -230,22 +230,6 @@
           animation-name: zoomIn;
 }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform: scale3d(0.3, 0.3, 0.3);
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.zoomIn {
-  -webkit-animation-name: zoomIn;
-          animation-name: zoomIn;
-}
-
 @-webkit-keyframes zoomOut {
   from {
     opacity: 1;
@@ -339,5 +323,35 @@
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
           animation-name: fadeInRight;
+}
+
+@-webkit-keyframes scrollUp {
+  from {
+    background-position: center 0%;
+  }
+  to {
+    background-position: center 100%;
+  }
+}
+
+@keyframes scrollUp {
+  from {
+    background-position: center 0%;
+  }
+  to {
+    background-position: center 100%;
+  }
+}
+
+@-webkit-keyframes scrollDown {
+  to {
+    background-position: center 0%;
+  }
+}
+
+@keyframes scrollDown {
+  to {
+    background-position: center 0%;
+  }
 }
 /*# sourceMappingURL=animation.css.map */
