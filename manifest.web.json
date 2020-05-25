@@ -1,0 +1,21 @@
+{
+    "short_name": "Web Developer",
+    "name": "Web Developer - Website development and optimization",
+    "description": "Order building of website on a turn-key basis. Website development, optimization, bug fixing. Building a website from scratch. Hire a professional web developer or web development services.",
+    "icons": [{
+            "src": "img/logo/logo192.png",
+            "type": "image/png",
+            "sizes": "474x192"
+        },
+        {
+            "src": "img/logo/logo512.png",
+            "type": "image/png",
+            "sizes": "1051x512"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#F3F3F3",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#F3F3F3"
+}

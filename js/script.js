@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", init, false);
 const scrollUp = document.getElementById("scrollUp");
 
 function init() {
-  document.body.className = "loaded";
+  setTimeout(function () {
+    document.body.className = "loaded";
+  }, 1000);
   new WOW().init();
   navBar();
   typeWriter();
@@ -28,9 +30,11 @@ function sendEmail() {
     const email = document.getElementById("contactEmail").value;
     const message = document.getElementById("contactTextarea").value;
     const btn = document.getElementById("send_email");
-    const spinner = document.getElementById("spinner-form");
-    btn.disabled = true;
-    spinner.classList.toggle("spinner-show");
+    const loaderWrapper = document.getElementById("loader-wrapper");
+    const loader = document.getElementById("loader");
+    btn.disabled = true;    
+    loaderWrapper.style.visibility = "visible";
+    loader.style.opacity = "1";
 
     Email.send({
       Host: "uk34.myserverhosts.com",
@@ -45,7 +49,8 @@ function sendEmail() {
         alert("Your message was sent successfully! ") :
         alert("error");
       btn.disabled = false;
-      spinner.classList.toggle("spinner-show");
+      loaderWrapper.style.visibility = "hidden";
+      loader.style.opacity = "0";
       contactForm.firstName.value = "";
       contactForm.contactEmail.value = "";
       contactForm.contactText.value = "";
@@ -120,53 +125,6 @@ function navBar() {
   document.addEventListener("scroll", navScroll, false);
 }
 
-// function galery() {
-//   const listItems = document.querySelectorAll(".filter-buttons button");
-//   const allimages = document.querySelectorAll(".portfolioImg .img-item");
-
-//   function toggleActiveClass(active) {
-//     listItems.forEach((item) => {
-//       item.classList.remove("active");
-//     });
-//     active.classList.add("active");
-//   }
-
-//   function toggleimages(dataFilter) {
-//     if (dataFilter === "*") {
-//       for (let i = 0; i < allimages.length; i++) {
-//         allimages[i].style.display = "block";
-//       }
-//     } else {
-//       let categoryArray = [];
-//       for (let i = 0; i < allimages.length; i++) {
-//         categoryArray = allimages[i].dataset.category.split(" ");
-//         if (categoryArray.length > 1) {
-//           let existClass = false;
-//           for (let j = 0; j < categoryArray.length; j++) {
-//             if (categoryArray[j] === dataFilter) {
-//               existClass = !existClass;
-//               break;
-//             }
-//           }
-//           (existClass) ?
-//           (allimages[i].style.display = "block") :
-//           (allimages[i].style.display = "none");
-//         } else {
-//           allimages[i].dataset.category === dataFilter ?
-//             (allimages[i].style.display = "block") :
-//             (allimages[i].style.display = "none");
-//         }
-//       }
-//     }
-//   }
-//   for (let i = 0; i < listItems.length; i++) {
-//     listItems[i].addEventListener("click", function () {
-//       toggleActiveClass(listItems[i]);
-//       toggleimages(listItems[i].dataset.filter);
-//     });
-//   }
-// }
-
 function navScroll() {
   const headerId = document.getElementById("navbar");
   if (document.documentElement.scrollTop > 28) {
@@ -195,11 +153,12 @@ class newSite {
 
   portofolioDOM() {
     let wrapper = document.createElement("div");
-    wrapper.className = "col-md-6 col-lg-4";
+    wrapper.className = "col-lg-6 col-xl-4";
     let portItem = document.createElement("div");
     portItem.className = "portfolio-item";
     let link = document.createElement("a");
     link.setAttribute("href", this.link);
+    link.setAttribute("rel", "noopener");
     link.setAttribute('target', '_blank');
     let portfolioImg = document.createElement("div");
     portfolioImg.className = "portfolio-img";

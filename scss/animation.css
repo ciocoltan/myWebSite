@@ -354,4 +354,26 @@
     background-position: center 0%;
   }
 }
+
+@-webkit-keyframes draw {
+  90% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+@keyframes draw {
+  90% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
 /*# sourceMappingURL=animation.css.map */
