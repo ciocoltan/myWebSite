@@ -48,14 +48,6 @@
     animation-name: slideInLeft;
 }
 
-.slideInRight {
-    animation-name: slideInRight;
-}
-
-.slideInUp {
-    animation-name: slideInUp;
-}
-
 @keyframes slideInLeft {
     from {
         transform: translate3d(-100%, 0, 0);
@@ -68,16 +60,8 @@
     }
 }
 
-@keyframes slideInRight {
-    from {
-        transform: translate3d(100%, 0, 0);
-        visibility: hidden;
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-        visibility: visible;
-    }
+.slideInUp {
+    animation-name: slideInUp;
 }
 
 @keyframes slideInUp {
@@ -90,38 +74,6 @@
         transform: translate3d(0, 0, 0);
         visibility: visible;
     }
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translate3d(100%, 0, 0);
-        visibility: hidden;
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-        visibility: visible;
-    }
-}
-
-.slideInRight {
-    animation-name: slideInRight;
-}
-
-@keyframes slideInDown {
-    from {
-        transform: translate3d(0, -100%, 0);
-        visibility: hidden;
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-        visibility: visible;
-    }
-}
-
-.slideInDown {
-    animation-name: slideInDown;
 }
 
 @keyframes zoomIn {
@@ -137,25 +89,6 @@
 
 .zoomIn {
     animation-name: zoomIn;
-}
-
-@keyframes zoomOut {
-    from {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-        transform: scale3d(0.3, 0.3, 0.3);
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.zoomOut {
-    animation-name: zoomOut;
 }
 
 @keyframes fadeInDown {
@@ -174,20 +107,16 @@
     animation-name: fadeInDown
 }
 
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translate3d(100%, 0, 0)
+@keyframes draw {
+    90% {
+        stroke-dashoffset: 0;
+        fill-opacity: 0;
     }
 
-    to {
-        opacity: 1;
-        transform: none
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
     }
-}
-
-.fadeInRight {
-    animation-name: fadeInRight
 }
 
 @keyframes scrollUp {
@@ -200,20 +129,12 @@
     }
 }
 
-@keyframes scrollDown {
-    to {
-        background-position: center 0%;
-    }
-}
-
-@keyframes draw {
-    90% {
-        stroke-dashoffset: 0;
-        fill-opacity: 0;
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
 
     100% {
-        stroke-dashoffset: 0;
-        fill-opacity: 1;
+        transform: rotate(360deg);
     }
 }

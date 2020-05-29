@@ -13,14 +13,20 @@
   <meta name="format-detection" content="telephone=no" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="icon" href="favicon.png" type="image/x-icon" />
-  <link rel="manifest" href="manifest.web.json">
   <title>Web Developer - Website development and optimization</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="scss/assets/bootstrap4.4.min.css"> -->
   <script async src="https://kit.fontawesome.com/bac3fa1238.js" crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="scss/main.css" />
-
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38869224-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-38869224-2');
+  </script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
@@ -29,23 +35,23 @@
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
   </div>
-  <header id="header">
+  <header id="home">
     <nav id="navbar" class="navbar navbar-expand-md">
       <div class="container">
         <div class="navbar-header">
-          <button class="navbar-toggler navbar-toggler-right" type="button" aria-label="navbar" data-toggle="collapse"
+          <button class="navbar-toggler" type="button" aria-label="navbar" data-toggle="collapse"
             data-target="#mobNavigation">
             <span class="toggle-icon">
               <i class="fa fa-bars" aria-hidden="true"></i>
             </span>
           </button>
-          <a class="navbar-brand logo" href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
+          <a class="navbar-brand12 logo" href="#home"><img src="img/logo/logo.png" alt="logo"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="mobNavigation">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="#header" class="nav-link">Home</a>
+              <a href="#home" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
               <a href="#about" class="nav-link">About</a>
@@ -96,7 +102,7 @@
                 </g>
               </svg>
             </h1>
-            <p class="slideInLeft animated delay-50ms wow">
+            <p class="slideInLeft delay-50ms wow">
               <span id="typeWriter" class="wrap" data-period="1500" data-text="FrontEnd Developer., Freelancer."></span>
             </p>
             <ul class="social-icon mb-5">
@@ -141,14 +147,14 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-12 col-lg-6">
-          <h2 class="section-title slideInLeft animated delay-50ms wow">
+          <h2 class="section-title slideInLeft delay-50ms wow">
             <span>About </span>me
           </h2>
-          <h3 class="title slideInLeft animated wow">
+          <h3 class="title slideInLeft wow">
             I’m Petru Ceciltan, FrontEnd Developer, based in Cyprus.
           </h3>
         </div>
-        <div class="col-12 col-lg-6 about-left-content slideInRight animated wow">
+        <div class="col-12 col-lg-6 about-left-content slideInUp wow">
           <p>
             Well - organized person, problem solver, independent and dedicated
             professional, with high attention to detail. I take great pride in
@@ -159,8 +165,7 @@
             Passionate of web development and information technology. With
             every line of code I strive to make web a beautiful place.
             Interested in developing good websites for positive people. A
-            family person, father of two ingenious boys, therefore remote
-            employment is preferred.
+            family person, father of two ingenious boys. Open for new opportunities.
           </p>
         </div>
       </div>
@@ -171,14 +176,14 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="section-title slideInLeft animated delay-50ms wow">
+          <h2 class="section-title slideInLeft delay-50ms wow">
             <span>My</span> Services
           </h2>
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="service-content slideInUp animated wow">
+          <div class="service-content slideInUp wow">
             <div class="service-icon">
               <img src="img/services/website_development.png" alt="website development" />
             </div>
@@ -192,7 +197,7 @@
         </div>
 
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="service-content slideInUp animated wow delay-50ms">
+          <div class="service-content slideInUp wow delay-50ms">
             <div class="service-icon">
               <img src="img/services/web_optimization.png" alt="website optimization" />
             </div>
@@ -206,7 +211,7 @@
         </div>
 
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="service-content slideInUp animated wow delay-1s">
+          <div class="service-content slideInUp wow delay-1s">
             <div class="service-icon">
               <img src="img/services/website_advertising.png" alt="web social media advertising" />
             </div>
@@ -220,7 +225,7 @@
         </div>
 
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="service-content slideInUp animated wow delay-150ms">
+          <div class="service-content slideInUp wow delay-150ms">
             <div class="service-icon">
               <img src="img/services/website_responsive.png" alt="responsive" />
             </div>
@@ -240,12 +245,12 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="section-title slideInLeft animated delay-50ms wow">
+          <h2 class="section-title slideInLeft delay-50ms wow">
             <span>My </span>Portfolio
           </h2>
-          <h3 class="slideInLeft animated wow mb-4">
+          <h3 class="slideInLeft wow mb-4">
             The Works I Have Done
-          </h3>
+          </h3>          
         </div>
       </div>
     </div>
@@ -261,7 +266,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="section-title slideInLeft animated delay-50ms wow">
+          <h2 class="section-title slideInLeft delay-50ms wow">
             <span>My </span>Resume
           </h2>
         </div>
@@ -312,7 +317,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-6 granduate work slideInRight wow">
+        <div class="col-md-6 granduate work slideInUp wow">
           <div class="graduate-title">
             <i class="fas fa-briefcase"></i>
             <h3>Work Experiences</h3>
@@ -330,7 +335,7 @@
             <h4>IT Manager, <span>“Alertica Consultants” LTD, Limassol, Cyprus</span></h4>
             <span>March 2015 - July 2019</span>
             <p>
-              Responsibilities: Development of company's websites, Creation of automatically statistic reports on the
+              Development of company's websites, Creation of automatically statistic reports on the
               company website, Entering invoices, Claim forms, Registering of new clients and programs in database after
               assessing the validity of associated documents accompanying the application, Renewal of programs,
               Processing of client’s Claim of Benefits upon maturity of their programs, Provide basic support to users
@@ -343,7 +348,7 @@
             <h4>Operator, <span>“Alertica Consultants” LTD, Limassol, Cyprus</span></h4>
             <span>October 2013 - March 2019</span>
             <p>
-              Responsibilities: Back office, Invoices, Claim Forms, Liking bank payments, Introduction and Validation
+              Back office, Invoices, Claim Forms, Liking bank payments, Introduction and Validation
               Data.
             </p>
           </div>
@@ -352,7 +357,7 @@
             <h4>Free lancing, Software Developer, <span>“Alertica Consultants” LTD, Limassol, Cyprus</span> </h4>
             <span>August 2013 - October 2013</span>
             <p>
-              Responsibilities: Creation and development of the company's website.
+              Creation and development of the company's website.
             </p>
           </div>
           <div class="items">
@@ -361,7 +366,7 @@
                 Moldova</span></h4>
             <span>April 2007 - August 2013</span>
             <p>
-              Responsibilities: Entering invoices, Inventory, Creating prices, Different reports for accounting.
+              Entering invoices, Inventory, Creating prices, Different reports for accounting.
             </p>
           </div>
         </div>
@@ -372,14 +377,14 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h3 class="section-title slideInLeft animated delay-50ms wow">
+            <h3 class="section-title slideInLeft delay-50ms wow">
               <span> My </span>Skills
             </h3>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 skill-img">
-            <div class="zoomIn animated wow">
+            <div class="zoomIn wow">
               <img src="img/skills.jpg" alt="skills" />
             </div>
           </div>
@@ -455,11 +460,12 @@
       </div>
     </section>
   </section>
+  
   <section id="contact" class="contact">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="section-title slideInLeft animated delay-50ms wow">
+          <h2 class="section-title slideInLeft delay-50ms wow">
             <span>My </span>Contact
           </h2>
         </div>
@@ -470,7 +476,6 @@
             If you’d like to get in touch or talk about a project, please fill
             in the form below and I'll get back to you within 1-2 hours.
           </h3>
-
           <form id="contact-form" method="post" class="form-wrapper needs-validation" novalidate>
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -515,7 +520,7 @@
 
   <div id="map-area">
     <div class="container">
-      <div class="row communication animated wow fadeInDown">
+      <div class="row communication wow fadeInDown">
         <div class="col-md-4 contactPhone">
           <a href="tel:+35797793634" aria-label="+35797793634"><i class="fas fa-phone"></i></a>
           <p>Contact Number: +357-97793634</p>

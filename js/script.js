@@ -32,7 +32,7 @@ function sendEmail() {
     const btn = document.getElementById("send_email");
     const loaderWrapper = document.getElementById("loader-wrapper");
     const loader = document.getElementById("loader");
-    btn.disabled = true;    
+    btn.disabled = true;
     loaderWrapper.style.visibility = "visible";
     loader.style.opacity = "1";
 
@@ -45,9 +45,33 @@ function sendEmail() {
       Subject: "Email from personal Wibesite",
       Body: `<html><h2>Email from ${firstName}</h2><p><strong>${message}</strong></p></html>`,
     }).then((res) => {
-      res == "OK" ?
-        alert("Your message was sent successfully! ") :
-        alert("error");
+      if (res == "OK") {
+        const emailConfirmWindow = document.createElement("div");
+        emailConfirmWindow.className = "alert alert-success alert-dismissible fade show modal-window";
+        emailConfirmWindow.setAttribute("role", "alert");
+        emailConfirmWindow.innerHTML = "Your message was successfully sent, we'll revert to you in maximum 1-2 hours.";
+        const btn = document.createElement("button");
+        btn.className = "close";
+        btn.setAttribute("data-dismiss", "alert");
+        const span = document.createElement("span");
+        span.setAttribute("aria-hidden", "true");
+        span.innerHTML = "&times;";
+        btn.appendChild(span);
+        emailConfirmWindow.appendChild(btn);
+        contactForm.appendChild(emailConfirmWindow);
+        setTimeout(function () {
+          $('.alert').alert('close');
+        }, 3000);
+      } else {
+        const emailConfirmWindow = document.createElement("div");
+        emailConfirmWindow.className = "alert alert-danger alert-dismissible fade show modal-window";
+        emailConfirmWindow.setAttribute("role", "alert");
+        emailConfirmWindow.innerHTML = "Sending failed, server Error. Please, contact me on my profile on Facebook or LinkedIn, or try again later!";
+        contactForm.appendChild(emailConfirmWindow);
+        setTimeout(function () {
+          $('.alert').alert('close');
+        }, 5000);
+      }
       btn.disabled = false;
       loaderWrapper.style.visibility = "hidden";
       loader.style.opacity = "0";
@@ -85,26 +109,24 @@ function portfolio() {
   const portfolioContent = document.getElementById("portfolio-content");
   const portfolioBtn = document.getElementById("see-more");
   let count = 0;
-
   let portfolioDb = [
-    new newSite("http://www.prestigeconsultants.net", "prestigeconsultants", "Универсальная страница для бизнеса", "Простой пример лендинга. Блок услуг  с фотографиями, колонки со списком преимуществ, форма для связи"),
-    new newSite("http://www.topcuratenie.md", "topcurat", "Универсальная страница для бизнеса", "Простой пример лендинга. Блок услуг  с фотографиями, колонки со списком преимуществ, форма для связи")
-
+    new newSite("#home", "personal", "Personal Web Site", "This site is designed to present my portfolio as web developer. It embodies perfectly self description and professional experience and gives to visitors an introduction about me and my work. It’s goal is to create a deeper emotional relationship with visitors, potential clients.", ["js","bootstrap"]),
+    new newSite("http://admin-panel.prestigeconsultants.net/", "admin-panel", "Admin Panel", "Admin Panel designated especially for users with no proficiency having the opportunity to modify, adjust, add information or any other changes to the website. It is an amazing tool easy to use and very helpful that guarantees excellent user experience.", ["angular","js","bootstrap"]),
+    new newSite("http://www.prestigeconsultants.net", "prestigeconsultants", "Prestige Business Consultants", "Website built from scratch and developed for a consulting company based in Cyprus. Fully responsive website, conceptualized in close collaboration with the management team to promote consulting services and necessary assistance to clients. Designed for easy and at the same time fast access for different categories of users/clients.", ["js","bootstrap"]),
+    new newSite("http://www.topcuratenie.md", "topcurat", "Top Curatenie", "A project designed and developed for small business - cleaning company from Republic of Moldova. The website constantly updated with new information like offers, promotions, hacks for housekeepers. Design adapted to the client's needs, providing the full range of services that the company offers.", ["css3","html5"])
   ];
   let n = portfolioDb.length;
   if (portfolioDb.length > 3) {
-    portfolioBtn.addEventListener("click", show, false);
+    portfolioBtn.addEventListener("click", btnshow, false);
     n = 3;
   } else {
     portfolioBtn.style.display = "none";
   }
-
-
   for (let i = 0; i < n; i++) {
     portfolioContent.appendChild(portfolioDb[i].portofolioDOM());
   }
 
-  function show() {
+  function btnshow() {
     count++
     for (let i = count * 3; i < (count * 3) + 3; i++) {
       if (i == portfolioDb.length) {
@@ -144,46 +166,58 @@ function copyrightYear() {
   copyrightYear.innerHTML = date.getFullYear();
 }
 class newSite {
-  constructor(link, className, title, description) {
+  constructor(link, className, title, description, language) {
     this.link = link;
     this.saitClassName = className;
     this.title = title;
     this.description = description;
+    this.language = language;
   }
 
   portofolioDOM() {
-    let wrapper = document.createElement("div");
-    wrapper.className = "col-lg-6 col-xl-4";
-    let portItem = document.createElement("div");
+    const wrapper = document.createElement("div");
+    wrapper.className = "col-md-6 col-xl-4";
+    const portItem = document.createElement("div");
     portItem.className = "portfolio-item";
-    let link = document.createElement("a");
+    const link = document.createElement("a");
     link.setAttribute("href", this.link);
     link.setAttribute("rel", "noopener");
     link.setAttribute('target', '_blank');
-    let portfolioImg = document.createElement("div");
+    const portfolioImg = document.createElement("div");
     portfolioImg.className = "portfolio-img";
     portfolioImg.classList.add(this.saitClassName);
-    let imgEye = document.createElement("div");
+    const imgEye = document.createElement("div");
     imgEye.className = "img-eye";
-    let eyeImg = document.createElement("img");
+    const eyeImg = document.createElement("img");
     eyeImg.src = "img/portofoliu/eye.png";
     eyeImg.setAttribute("alt", "portofolio eye");
     imgEye.appendChild(eyeImg);
     portfolioImg.appendChild(imgEye);
     link.appendChild(portfolioImg);
-    let portfolioText = document.createElement("div");
+    const portfolioText = document.createElement("div");
     portfolioText.className = "portfolio-text";
-    let portfolioTitle = document.createElement("h4");
+    const portfolioTitle = document.createElement("h4");
     portfolioTitle.className = "portfolio-title";
     portfolioTitle.innerHTML = this.title;
     portfolioText.appendChild(portfolioTitle);
-    let description = document.createElement("p");
+    const description = document.createElement("p");
     description.innerHTML = this.description;
     portfolioText.appendChild(description);
-    let siteShowBtn = document.createElement("button");
+    const portfolioFooter = document.createElement("div");
+    portfolioFooter.className = "portfolio-footer";
+    const siteShowBtn = document.createElement("button");
     siteShowBtn.className = " btn btn-sm";
-    siteShowBtn.innerHTML = "Look";
-    portfolioText.appendChild(siteShowBtn);
+    siteShowBtn.innerHTML = "Visit";
+    const iconContainer = document.createElement("div");
+    iconContainer.className = "row";
+    for (let i = 0; i < this.language.length; i++) {
+      const div = document.createElement("div");
+      div.className = "icon " + this.language[i];
+      iconContainer.appendChild(div);      
+    }
+    portfolioFooter.appendChild(siteShowBtn);
+    portfolioFooter.appendChild(iconContainer);    
+    portfolioText.appendChild(portfolioFooter);
     link.appendChild(portfolioText);
     portItem.appendChild(link);
     wrapper.appendChild(portItem);

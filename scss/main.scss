@@ -4,14 +4,11 @@
 $primary: #8e8e90;
 $white: #ffffff;
 $title: #222129;
-$green: #6BBA62;
+$green: #6bba62;
 $btnHover: #37c978;
 $btn: #f3f3f3;
 $resumeColor: #ff724c;
-$poppins: "Times New Roman",
-Times,
-serif,
-sans-serif;
+$poppins: "Times New Roman", Times, serif, sans-serif;
 // $poppins: "Raleway", sans-serif;
 $t_sc: all 0.3s ease-in-out;
 
@@ -250,16 +247,6 @@ section {
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*---------- SVG Style-------*/
 svg {
   width: 100%;
@@ -275,7 +262,7 @@ svg {
     font-size: 40px;
     letter-spacing: -2px;
 
-    tspan>tspan {
+    tspan > tspan {
       stroke-dasharray: 150;
       stroke-dashoffset: -150;
 
@@ -313,7 +300,6 @@ header {
       position: absolute;
       top: 0px;
     }
-
   }
 
   .navbar {
@@ -346,9 +332,8 @@ header {
   .lab-navbar {
     padding: 20px 0;
     background-color: #fff;
-    transition: 0.5s ease;
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     .fa-bars::before {
       color: #333;
@@ -554,15 +539,23 @@ header {
       color: black;
 
       .topcurat {
-        background: url(../img/portofoliu/topcuratenie.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/topcuratenie.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+
+      .admin-panel {
+        background: url(../img/portofoliu/adminpanel.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
       }
 
       .prestigeconsultants {
-        background: url(../img/portofoliu/prestigeconsultants.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/prestigeconsultants.jpg) center 0% /
+          cover no-repeat rgb(170, 170, 170);
       }
 
       .personal {
-        background: url(../img/portofoliu/tpl_bu_universal_2_r.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/personal.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
       }
 
       .portfolio-img {
@@ -602,21 +595,47 @@ header {
       }
 
       .portfolio-text {
-        max-width: 100%;
-        margin: 40px 20px;
-
+        // max-width: 100%;
+        margin: 20px 20px;
         .portfolio-title {
+          width: 100%;
           font-size: 20px;
           font-weight: 600;
-          height: 50px;
           overflow: hidden;
         }
-
         p {
           line-height: 20px;
           margin: 1rem 0;
-          height: 80px;
+          height: 180px;
           overflow: hidden;
+        }
+        .icon {
+          height: 37px;
+          width: 26px;
+          margin: 0 2px;
+        }
+        .css3 {
+          background: url(../img/logo/css3.jpg) center 0% / cover no-repeat;
+        }
+        .html5 {
+          background: url(../img/logo/html5.jpg) center 0% / cover no-repeat;
+        }
+        .js {
+          background: url(../img/logo/js.jpg) center 0% / cover no-repeat;
+        }
+        .angular {
+          background: url(../img/logo/angular.jpg) center 0% / cover no-repeat;
+          width: 30px;
+        }
+        .bootstrap{
+          background: url(../img/logo/bootstrap.jpg) center 0% / cover no-repeat;
+          width: 30px;
+        }
+
+        .portfolio-footer {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
         }
       }
     }
@@ -798,6 +817,13 @@ header {
 
     .form-wrapper {
       padding: 20px 0;
+
+      .modal-window {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
     }
 
     .btn {
@@ -950,7 +976,6 @@ header {
   }
 
   .communication {
-
     .contactPhone,
     .contactMail,
     .location {
@@ -960,7 +985,15 @@ header {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 576px) {
+  .logo {
+    img {
+      top: 10px !important;
+      right: 30px;
+      height: 45px;
+    }
+  }
+
   svg {
     text {
       font-size: 30px;
