@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:yandex="http://news.yandex.ru"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:turbo="http://turbo.yandex.ru"
+     version="2.0">
+    <channel>
+        <item turbo="true">
+  <title>Web Developer - Website development and optimization</title>
+  <link>https://www.ceciltan.com</link>
+  <turbo:content>
+    <![CDATA[
+      <header>
+        <h1>Web development</h1>
+        <figure>
+          <img src="https://www.ceciltan.com/img/webDeveloper.jpg">
+        </figure>
+      </header>
+      <p>If you are a young entrepreneur and you need a web page for your business, or you want an improvement of the already existing website, we can cooperate together at a better price for our achievement.</p>
+         
+      <button formaction="tel:+35797793634"
+              data-background-color="#5B97B0"
+              data-color="white"
+              data-primary="true">Call me</button>
+    ]]>
+    </turbo:content>
+</item>
+    </channel>
+</rss>

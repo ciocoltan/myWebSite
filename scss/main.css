@@ -353,6 +353,7 @@ section {
   border: 0;
   overflow: hidden;
   padding: 0.5rem 1.5rem;
+  cursor: pointer;
 }
 
 .btn::before {
@@ -870,6 +871,14 @@ header .intro-text .header-btn a {
   background: url(../img/portofoliu/personal.jpg) center 0%/cover no-repeat #aaaaaa;
 }
 
+.portfolio .portfolio-item a .tetris {
+  background: url(../img/portofoliu/tetris.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .slctruckcorp {
+  background: url(../img/portofoliu/truckAgency.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
 .portfolio .portfolio-item a .portfolio-img {
   width: 100%;
   height: 300px;
@@ -925,7 +934,7 @@ header .intro-text .header-btn a {
 .portfolio .portfolio-item a .portfolio-text p {
   line-height: 20px;
   margin: 1rem 0;
-  height: 180px;
+  height: 170px;
   overflow: hidden;
 }
 
@@ -1261,6 +1270,7 @@ header .intro-text .header-btn a {
   font-size: 12px;
   -webkit-transform: rotate(0);
           transform: rotate(0);
+  cursor: pointer;
 }
 
 .communication a i:hover {

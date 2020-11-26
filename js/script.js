@@ -19,16 +19,16 @@ function contactForm() {
   btn.addEventListener("click", sendEmail, false);
 }
 
-function sendEmail() {
+function sendEmail() {  
   const contactForm = document.getElementById("contact-form");
-  contactForm.classList.add("was-validated");
-  if (contactForm.checkValidity() === false) {
+
+    if (contactForm.checkValidity() === false) {
     event.preventDefault();
     event.stopPropagation();
   } else {
-    const firstName = document.getElementById("contactName").value;
-    const email = document.getElementById("contactEmail").value;
-    const message = document.getElementById("contactTextarea").value;
+    const firstName = contactForm.firstName.value;
+    const email = contactForm.contactEmail.value;
+    const message = contactForm.contactText.value;
     const btn = document.getElementById("send_email");
     const loaderWrapper = document.getElementById("loader-wrapper");
     const loader = document.getElementById("loader");
@@ -37,19 +37,21 @@ function sendEmail() {
     loader.style.opacity = "1";
 
     Email.send({
-      Host: "uk34.myserverhosts.com",
-      Username: "test@prestigeconsultants.net",
-      Password: "Nikolaus1",
-      To: "test@prestigeconsultants.net",
+      Host: "mail.ceciltan.com",
+      Username: "admin@ceciltan.com",
+      Password: "Nimenisinimic1!",
+      To: "admin@ceciltan.com",
       From: email,
       Subject: "Email from personal Wibesite",
       Body: `<html><h2>Email from ${firstName}</h2><p><strong>${message}</strong></p></html>`,
     }).then((res) => {
       if (res == "OK") {
         const emailConfirmWindow = document.createElement("div");
-        emailConfirmWindow.className = "alert alert-success alert-dismissible fade show modal-window";
+        emailConfirmWindow.className =
+          "alert alert-success alert-dismissible fade show modal-window";
         emailConfirmWindow.setAttribute("role", "alert");
-        emailConfirmWindow.innerHTML = "Your message was successfully sent, we'll revert to you in maximum 1-2 hours.";
+        emailConfirmWindow.innerHTML =
+          "Your message was successfully sent, we'll revert to you in maximum 1-2 hours.";
         const btn = document.createElement("button");
         btn.className = "close";
         btn.setAttribute("data-dismiss", "alert");
@@ -60,16 +62,18 @@ function sendEmail() {
         emailConfirmWindow.appendChild(btn);
         contactForm.appendChild(emailConfirmWindow);
         setTimeout(function () {
-          $('.alert').alert('close');
+          $(".alert").alert("close");
         }, 3000);
       } else {
         const emailConfirmWindow = document.createElement("div");
-        emailConfirmWindow.className = "alert alert-danger alert-dismissible fade show modal-window";
+        emailConfirmWindow.className =
+          "alert alert-danger alert-dismissible fade show modal-window";
         emailConfirmWindow.setAttribute("role", "alert");
-        emailConfirmWindow.innerHTML = "Sending failed, server Error. Please, contact me on my profile on Facebook or LinkedIn, or try again later!";
+        emailConfirmWindow.innerHTML =
+          "Sending failed, server Error. Please, contact me on my profile on Facebook or LinkedIn, or try again later!";
         contactForm.appendChild(emailConfirmWindow);
         setTimeout(function () {
-          $('.alert').alert('close');
+          $(".alert").alert("close");
         }, 5000);
       }
       btn.disabled = false;
@@ -78,9 +82,12 @@ function sendEmail() {
       contactForm.firstName.value = "";
       contactForm.contactEmail.value = "";
       contactForm.contactText.value = "";
+      contactForm.checkInputForm.checked = false;
       contactForm.classList.remove("was-validated");
     });
   }
+contactForm.classList.add("was-validated");
+
 }
 
 function btnScrollUp() {
@@ -110,10 +117,48 @@ function portfolio() {
   const portfolioBtn = document.getElementById("see-more");
   let count = 0;
   let portfolioDb = [
-    new newSite("#home", "personal", "Personal Web Site", "This site is designed to present my portfolio as web developer. It embodies perfectly self description and professional experience and gives to visitors an introduction about me and my work. It’s goal is to create a deeper emotional relationship with visitors, potential clients.", ["js","bootstrap"]),
-    new newSite("http://admin-panel.prestigeconsultants.net/", "admin-panel", "Admin Panel", "Admin Panel designated especially for users with no proficiency having the opportunity to modify, adjust, add information or any other changes to the website. It is an amazing tool easy to use and very helpful that guarantees excellent user experience.", ["angular","js","bootstrap"]),
-    new newSite("http://www.prestigeconsultants.net", "prestigeconsultants", "Prestige Business Consultants", "Website built from scratch and developed for a consulting company based in Cyprus. Fully responsive website, conceptualized in close collaboration with the management team to promote consulting services and necessary assistance to clients. Designed for easy and at the same time fast access for different categories of users/clients.", ["js","bootstrap"]),
-    new newSite("http://www.topcuratenie.md", "topcurat", "Top Curatenie", "A project designed and developed for small business - cleaning company from Republic of Moldova. The website constantly updated with new information like offers, promotions, hacks for housekeepers. Design adapted to the client's needs, providing the full range of services that the company offers.", ["css3","html5"])
+    new newSite(
+      "https://truck.ceciltan.com/",
+      "slctruckcorp",
+      "Truck Drivers Recruitment Agency",
+      "This website is a board for trucking jobs that are on high demand. The  website is designed to attract talented drivers and operators at the same time offering them one of the best opportunities for career path. Users can easily access the information and fill in the job application online. In addition there’s a chat for inquiries or any questions the user might have.",
+      ["js", "bootstrap"]
+    ),
+    new newSite(
+      "https://www.tetris.ceciltan.com/",
+      "tetris",
+      "Tetris in JavaSript",
+      "Tetris is a famous game many of us grow up playing. I developed it in JS, containg all types of Tetris blocks that are changing shape move and increase speed. Special command board is used to play. The game is about completing horizontal rows without empty cells to clear the lines. When you reach the top the game is over.",
+      ["js", "bootstrap"]
+    ),
+    new newSite(
+      "#home",
+      "personal",
+      "Personal Web Site",
+      "This site is designed to present my portfolio as web developer. It embodies perfectly self description and professional experience and gives to visitors an introduction about me and my work. It’s goal is to create a deeper emotional relationship with visitors, potential clients.",
+      ["js", "bootstrap"]
+    ),
+    new newSite(
+      "https://admin-panel.ceciltan.com/",
+      "admin-panel",
+      "Admin Panel",
+      "Admin Panel designated especially for users with no proficiency having the opportunity to modify, adjust, add information or any other changes to the website. It is an amazing tool easy to use and very helpful that guarantees excellent user experience.",
+      ["angular", "js", "bootstrap"]
+    ),
+    new newSite(
+      "https://www.prestigeconsultants.net",
+      "prestigeconsultants",
+      "Prestige Business Consultants",
+      "Website built from scratch and developed for a consulting company based in Cyprus. Fully responsive website, conceptualized in close collaboration with the management team to promote consulting services and necessary assistance to clients. Designed for easy and at the same time fast access for different categories of users/clients.",
+      ["js", "bootstrap"]
+    ),
+    new newSite(
+      "https://www.topcuratenie.ceciltan.com/",
+      "topcurat",
+      "Top Curatenie",
+      "A project designed and developed for small business - cleaning company from Republic of Moldova. The website constantly updated with new information like offers, promotions, hacks for housekeepers. Design adapted to the client's needs, providing the full range of services that the company offers.",
+      ["css3", "html5"]
+    ),
   ];
   let n = portfolioDb.length;
   if (portfolioDb.length > 3) {
@@ -127,17 +172,18 @@ function portfolio() {
   }
 
   function btnshow() {
-    count++
-    for (let i = count * 3; i < (count * 3) + 3; i++) {
-      if (i == portfolioDb.length) {
+    count++;
+    for (let i = count * 3; i < count * 3 + 3; i++) {
+      console.log(i);
+      console.log(portfolioDb.length);      
+      portfolioContent.appendChild(portfolioDb[i].portofolioDOM());
+      if (i == portfolioDb.length - 1) {
         portfolioBtn.style.display = "none";
         break;
       }
-      portfolioContent.appendChild(portfolioDb[i].portofolioDOM());
     }
   }
 }
-
 
 function navBar() {
   const headerId = document.getElementById("navbar");
@@ -182,7 +228,7 @@ class newSite {
     const link = document.createElement("a");
     link.setAttribute("href", this.link);
     link.setAttribute("rel", "noopener");
-    link.setAttribute('target', '_blank');
+    link.setAttribute("target", "_blank");
     const portfolioImg = document.createElement("div");
     portfolioImg.className = "portfolio-img";
     portfolioImg.classList.add(this.saitClassName);
@@ -190,6 +236,8 @@ class newSite {
     imgEye.className = "img-eye";
     const eyeImg = document.createElement("img");
     eyeImg.src = "img/portofoliu/eye.png";
+    eyeImg.setAttribute("width", "50");
+    eyeImg.setAttribute("height", "50");
     eyeImg.setAttribute("alt", "portofolio eye");
     imgEye.appendChild(eyeImg);
     portfolioImg.appendChild(imgEye);
@@ -213,10 +261,10 @@ class newSite {
     for (let i = 0; i < this.language.length; i++) {
       const div = document.createElement("div");
       div.className = "icon " + this.language[i];
-      iconContainer.appendChild(div);      
+      iconContainer.appendChild(div);
     }
     portfolioFooter.appendChild(siteShowBtn);
-    portfolioFooter.appendChild(iconContainer);    
+    portfolioFooter.appendChild(iconContainer);
     portfolioText.appendChild(portfolioFooter);
     link.appendChild(portfolioText);
     portItem.appendChild(link);
