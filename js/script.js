@@ -9,6 +9,7 @@ function init() {
   navBar();
   typeWriter();
   portfolio();
+  diplom();
   btnScrollUp();
   contactForm();
   copyrightYear();
@@ -118,6 +119,13 @@ function portfolio() {
   let count = 0;
   let portfolioDb = [
     new newSite(
+      "https://www.evermark.info/",
+      "evermark",
+      "Evermark Property",
+      "For the setup of the entire website, I was engaged in developing a complex of effective practices and tools, testing and adapting it for viewing on different devices. The website has a modern professional structure, giving the users the opportunity to smoothly navigate to info, plans, drawings, pictures, etc. ",
+      ["js", "bootstrap"]
+    ),
+    new newSite(
       "https://truck.ceciltan.com/",
       "slctruckcorp",
       "Truck Drivers Recruitment Agency",
@@ -142,7 +150,7 @@ function portfolio() {
       "https://admin-panel.ceciltan.com/",
       "admin-panel",
       "Admin Panel",
-      "Admin Panel designated especially for users with no proficiency having the opportunity to modify, adjust, add information or any other changes to the website. It is an amazing tool easy to use and very helpful that guarantees excellent user experience.",
+      "Admin Panel designated especially for users with no proficiency having the opportunity to modify, adjust, add information, or any other changes to the website. It is an amazing tool easy to use and very helpful that guarantees an excellent user experience.",
       ["angular", "js", "bootstrap"]
     ),
     new newSite(
@@ -173,12 +181,84 @@ function portfolio() {
 
   function btnshow() {
     count++;
-    for (let i = count * 3; i < count * 3 + 3; i++) {
-      console.log(i);
-      console.log(portfolioDb.length);      
+    for (let i = count * 3; i < count * 3 + 3; i++) {      
       portfolioContent.appendChild(portfolioDb[i].portofolioDOM());
       if (i == portfolioDb.length - 1) {
         portfolioBtn.style.display = "none";
+        break;
+      }
+    }
+  }
+}
+
+function diplom() {
+  const diplomContent = document.getElementById("diplom-content");
+  const diplomBtn = document.getElementById("diplom-more");
+  let count = 0;
+  let diplomDb = [ 
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP59922739.pdf",
+      "frontend"
+    ),   
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP55195843.pdf",
+      "angular-developer"
+    ),    
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP73229688.pdf",
+      "javascript"
+    ),
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP37562356.pdf",
+      "bootstrap"
+    ),    
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP46647232.pdf",
+      "typescript"
+    ),    
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP04562023.pdf",
+      "es6"
+    ),
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP93426588.pdf",
+      "javascript-pattern"
+    ),    
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP05619376.pdf",
+      "javascript-advanced"
+    ),
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP99420520.pdf",
+      "javascript-essential"
+    ),
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP22293933.pdf",
+      "html-advanced"
+    ),
+    new newDiplom(
+      "https://www.ceciltan.com/pdf/diplom/TP27636229.pdf",
+      "html-starter"
+    ),
+    
+  ];
+  let n = diplomDb.length;
+  if (diplomDb.length > 3) {
+    diplomBtn.addEventListener("click", btnshow, false);
+    n = 3;
+  } else {
+    diplomBtn.style.display = "none";
+  }
+  for (let i = 0; i < n; i++) {
+    diplomContent.appendChild(diplomDb[i].diplomDOM());
+  }
+
+  function btnshow() {
+    count++;
+    for (let i = count * 3; i < count * 3 + 3; i++) {      
+      diplomContent.appendChild(diplomDb[i].diplomDOM());
+      if (i == diplomDb.length - 1) {
+        diplomBtn.style.display = "none";
         break;
       }
     }
@@ -267,6 +347,45 @@ class newSite {
     portfolioFooter.appendChild(iconContainer);
     portfolioText.appendChild(portfolioFooter);
     link.appendChild(portfolioText);
+    portItem.appendChild(link);
+    wrapper.appendChild(portItem);
+    return wrapper;
+  }
+}
+class newDiplom {
+  constructor(link, className) {
+    this.link = link;
+    this.diplomClassName = className;
+  }
+
+  diplomDOM() {
+    const wrapper = document.createElement("div");
+    wrapper.className = "col-md-6 col-xl-4";
+    const portItem = document.createElement("div");
+    portItem.className = "portfolio-item";
+    const link = document.createElement("a");
+    link.setAttribute("href", this.link);
+    link.setAttribute("rel", "noopener");
+    link.setAttribute("target", "_blank");
+    const portfolioImg = document.createElement("div");
+    portfolioImg.className = "portfolio-img";
+    portfolioImg.classList.add(this.diplomClassName);
+    const imgEye = document.createElement("div");
+    imgEye.className = "img-eye";
+    const eyeImg = document.createElement("img");
+    eyeImg.src = "img/portofoliu/eye.png";
+    eyeImg.setAttribute("width", "50");
+    eyeImg.setAttribute("height", "50");
+    eyeImg.setAttribute("alt", "portofolio eye");
+    imgEye.appendChild(eyeImg);
+    portfolioImg.appendChild(imgEye);
+    link.appendChild(portfolioImg);
+    // const portfolioFooter = document.createElement("div");
+    // portfolioFooter.className = "portfolio-footer";
+    // const siteShowBtn = document.createElement("button");
+    // siteShowBtn.className = " btn btn-sm";
+    // siteShowBtn.innerHTML = "Download";
+    // portfolioFooter.appendChild(siteShowBtn);
     portItem.appendChild(link);
     wrapper.appendChild(portItem);
     return wrapper;

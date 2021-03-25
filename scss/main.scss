@@ -1,4 +1,3 @@
-// @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap rel="stylesheet');
 @import "animation";
 /* Variables */
 $primary: #8e8e90;
@@ -7,12 +6,8 @@ $title: #222129;
 $green: #6bba62;
 $btnHover: #37c978;
 $btn: #f3f3f3;
-$resumeColor: #ff724c;
-$poppins: "Times New Roman",
-Times,
-serif,
-sans-serif;
-// $poppins: "Raleway", sans-serif;
+$resumeColor: #fa6231;
+$poppins: "Times New Roman", Times, serif, sans-serif;
 $t_sc: all 0.3s ease-in-out;
 
 * {
@@ -84,7 +79,7 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   text-align: right;
-  max-width: 350px;
+  max-width: 385px;
 
   span {
     font-weight: 800;
@@ -205,7 +200,7 @@ section {
       bottom: 15px;
       border-radius: 50%;
       border: 3px solid transparent;
-      border-top-color: #fa6231;
+      border-top-color: $resumeColor;
       animation: spin 1.5s linear infinite;
     }
   }
@@ -266,7 +261,7 @@ svg {
     font-size: 40px;
     letter-spacing: -2px;
 
-    tspan>tspan {
+    tspan > tspan {
       stroke-dasharray: 150;
       stroke-dashoffset: -150;
 
@@ -327,7 +322,7 @@ header {
 
         &.active,
         &:hover {
-          color: $green;
+          color: $resumeColor;
         }
       }
     }
@@ -349,7 +344,7 @@ header {
 
         &.active,
         &:hover {
-          color: $green;
+          color: $resumeColor;
         }
       }
     }
@@ -538,31 +533,79 @@ header {
     box-shadow: 0px 1px 1px #eee;
     margin-bottom: 80px;
     background-color: #fff;
-
     a {
       color: black;
-
+      .bootstrap {
+        background: url(../img/diplom/bootstrap.jpg) center 0% / cover no-repeat
+          rgb(170, 170, 170);
+      }
+      .angular-developer {
+        background: url(../img/diplom/angularDeveloper.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .frontend {
+        background: url(../img/diplom/frontend.jpg) center 0% / cover no-repeat
+          rgb(170, 170, 170);
+      }
+      .javascript {
+        background: url(../img/diplom/javascriptDeveloper.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .javascript-pattern {
+        background: url(../img/diplom/javascriptPattern.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .typescript {
+        background: url(../img/diplom/typescript.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .html-advanced {
+        background: url(../img/diplom/htmlAdvaced.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .html-starter {
+        background: url(../img/diplom/htmlStarter.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .javascript-advanced {
+        background: url(../img/diplom/javascriptAdvanced.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .javascript-essential {
+        background: url(../img/diplom/javascriptEssential.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .es6 {
+        background: url(../img/diplom/ES6.jpg) center 0% / cover no-repeat
+          rgb(170, 170, 170);
+      }
       .topcurat {
-        background: url(../img/portofoliu/topcuratenie.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/topcuratenie.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
       }
-
       .admin-panel {
-        background: url(../img/portofoliu/adminpanel.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/adminpanel.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
       }
-
       .prestigeconsultants {
-        background: url(../img/portofoliu/prestigeconsultants.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/prestigeconsultants.jpg) center 0% /
+          cover no-repeat rgb(170, 170, 170);
       }
-
       .personal {
-        background: url(../img/portofoliu/personal.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/personal.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
       }
-
       .tetris {
-        background: url(../img/portofoliu/tetris.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+        background: url(../img/portofoliu/tetris.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
       }
-      .slctruckcorp{
-        background: url(../img/portofoliu/truckAgency.jpg) center 0% / cover no-repeat rgb(170, 170, 170);
+      .slctruckcorp {
+        background: url(../img/portofoliu/truckAgency.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
+      }
+      .evermark {
+        background: url(../img/portofoliu/evermark.jpg) center 0% / cover
+          no-repeat rgb(170, 170, 170);
       }
 
       .portfolio-img {
@@ -741,7 +784,6 @@ header {
     }
   }
 
-  /*---------- Skills Style-------*/
   .skill {
     padding-top: 100px;
 
@@ -915,7 +957,6 @@ header {
       font-size: 12px;
       transform: rotate(0);
       cursor: pointer;
-      
 
       &:hover {
         color: $btn;

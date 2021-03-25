@@ -1,0 +1,25 @@
+{
+  "folders": [
+	{
+		"path": "..\\CONSTRUCTION"
+	},
+	{
+		"path": "..\\template\\montreaux.co.uk"
+	},
+	{
+		"path": "."
+	},
+	{
+		"path": "..\\TruckDrivers"
+	},
+	{
+		"path": "..\\test"
+	},
+	{
+		"path": "..\\Evermark"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "myWebSite"
+  }
+}

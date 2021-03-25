@@ -314,7 +314,7 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   text-align: right;
-  max-width: 350px;
+  max-width: 385px;
 }
 
 .section-title span {
@@ -639,7 +639,7 @@ header .navbar .nav-item .nav-link {
 }
 
 header .navbar .nav-item .nav-link.active, header .navbar .nav-item .nav-link:hover {
-  color: #6bba62;
+  color: #fa6231;
 }
 
 header .lab-navbar {
@@ -660,7 +660,7 @@ header .lab-navbar .nav-item .nav-link {
 }
 
 header .lab-navbar .nav-item .nav-link.active, header .lab-navbar .nav-item .nav-link:hover {
-  color: #6bba62;
+  color: #fa6231;
 }
 
 header .intro-text {
@@ -855,6 +855,50 @@ header .intro-text .header-btn a {
   color: black;
 }
 
+.portfolio .portfolio-item a .bootstrap {
+  background: url(../img/diplom/bootstrap.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .angular-developer {
+  background: url(../img/diplom/angularDeveloper.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .frontend {
+  background: url(../img/diplom/frontend.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .javascript {
+  background: url(../img/diplom/javascriptDeveloper.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .javascript-pattern {
+  background: url(../img/diplom/javascriptPattern.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .typescript {
+  background: url(../img/diplom/typescript.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .html-advanced {
+  background: url(../img/diplom/htmlAdvaced.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .html-starter {
+  background: url(../img/diplom/htmlStarter.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .javascript-advanced {
+  background: url(../img/diplom/javascriptAdvanced.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .javascript-essential {
+  background: url(../img/diplom/javascriptEssential.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .es6 {
+  background: url(../img/diplom/ES6.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
 .portfolio .portfolio-item a .topcurat {
   background: url(../img/portofoliu/topcuratenie.jpg) center 0%/cover no-repeat #aaaaaa;
 }
@@ -877,6 +921,10 @@ header .intro-text .header-btn a {
 
 .portfolio .portfolio-item a .slctruckcorp {
   background: url(../img/portofoliu/truckAgency.jpg) center 0%/cover no-repeat #aaaaaa;
+}
+
+.portfolio .portfolio-item a .evermark {
+  background: url(../img/portofoliu/evermark.jpg) center 0%/cover no-repeat #aaaaaa;
 }
 
 .portfolio .portfolio-item a .portfolio-img {
@@ -977,10 +1025,6 @@ header .intro-text .header-btn a {
 }
 
 /*---------- Resume Style-------*/
-.resume {
-  /*---------- Skills Style-------*/
-}
-
 .resume .granduate {
   width: 100%;
 }
@@ -1033,12 +1077,12 @@ header .intro-text .header-btn a {
 }
 
 .resume .granduate .items:hover i {
-  background-color: #ff724c;
+  background-color: #fa6231;
   border-radius: 50%;
 }
 
 .resume .granduate .items i {
-  color: #ff724c;
+  color: #fa6231;
   font-size: 10px;
   position: absolute;
   left: 25px;
@@ -1058,7 +1102,7 @@ header .intro-text .header-btn a {
 .resume .granduate .items span {
   font-size: 15px;
   font-weight: 400;
-  color: #ff724c;
+  color: #fa6231;
   margin-bottom: 10px;
 }
 
@@ -1190,7 +1234,7 @@ header .intro-text .header-btn a {
 }
 
 .contact .contact_form .btn:hover i {
-  color: #ff724c;
+  color: #fa6231;
 }
 
 /*---------- scrollUp Style-------*/
@@ -1220,7 +1264,7 @@ header .intro-text .header-btn a {
 }
 
 .scrollUp:hover {
-  color: #ff724c;
+  color: #fa6231;
 }
 
 /*---------- communication Style-------*/
@@ -1263,7 +1307,7 @@ header .intro-text .header-btn a {
 }
 
 .communication a i {
-  color: #ff724c;
+  color: #fa6231;
   background-color: #f3f3f3;
   border-radius: 100%;
   padding: 7px 7px;
@@ -1275,7 +1319,7 @@ header .intro-text .header-btn a {
 
 .communication a i:hover {
   color: #f3f3f3;
-  background-color: #ff724c;
+  background-color: #fa6231;
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
   -webkit-transition: 0.5s ease;

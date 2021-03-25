@@ -13,28 +13,46 @@
     content="Order building of website on a turn-key basis. Website development, optimization, bug fixing. Building a website from scratch. Hire a professional web developer or web development services." />
   <meta name="keywords"
     content="website, personal website, free website, developer, FrontEnd, front-end developer, web developer, web development services, resume, skills, portfolio, contact, about" />
+  <meta name="image" content="img/banner.jpg" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:site_name" content="ceciltan.com" />
+  <meta property="og:title" content="Web Developer - Website development and optimization" />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:description"
+    content="Order building of website on a turn-key basis. Website development, optimization, bug fixing. Building a website from scratch. Hire a professional web developer or web development services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/banner.jpg" />
+  <meta name="yandex-verification" content="42347cd21646dd85" />
   <link rel="apple-touch-icon" sizes="32x32" href="favicon.png" />
   <link rel="icon" sizes="32x32" href="favicon.png" type="image/png" />
   <link rel="manifest" href="/manifest.web.json">
   <title>Web Developer - Website development and optimization</title>
 
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="scss/main.min.css" />
 
   <script async src="https://kit.fontawesome.com/bac3fa1238.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="scss/main.min.css" />
   <script src="//code.jivosite.com/widget/iB2iJrUZFe" async></script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38869224-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-38869224-3');
-  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M3MHJG8');</script>
+  <!-- End Google Tag Manager -->
+  
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3MHJG8" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div id="loader-wrapper">
     <div id="loader"></div>
     <div class="loader-section section-left"></div>
@@ -80,8 +98,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <div class="intro-text">
+          <div class="intro-text" itemscope itemtype="http://schema.org/Person">
             <div class="subheading">Hello I’m</div>
+            <span itemprop="name" class="d-none">Petru Ceciltan</span>
             <h1>
               <svg>
                 <title>Petru Ceciltan</title>
@@ -107,6 +126,7 @@
                 </g>
               </svg>
             </h1>
+            <span itemprop="jobTitle" class="d-none">Front End Developer</span>
             <p class="slideInLeft delay-50ms wow">
               <span id="typeWriter" class="wrap" data-period="1500" data-text="FrontEnd Developer., Freelancer."></span>
             </p>
@@ -124,8 +144,8 @@
                 </a>
               </li>
               <li>
-                <a class="linkedin" href="https://www.linkedin.com/in/petru-ceciltan-4694976b/" target="_blank"
-                  rel="noopener" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/petruceciltan/" target="_blank" rel="noopener"
+                  aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
               </li>
               <li>
                 <a class="google" href="mailto:ciocoltan@gmail.com" aria-label="google +"><i
@@ -190,7 +210,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
           <div class="service-content slideInUp wow">
             <div class="service-icon">
-              <img src="img/services/website_development.png" width="128" height="128" alt="website development" />
+              <img width="128" height="128" alt="website development" src="img/services/website_development.png" />
             </div>
             <h3>Web development</h3>
             <p>
@@ -204,7 +224,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
           <div class="service-content slideInUp wow delay-50ms">
             <div class="service-icon">
-              <img src="img/services/web_optimization.png"  width="128" height="128" alt="website optimization" />
+              <img width="128" height="128" alt="website optimization" src="img/services/web_optimization.png" />
             </div>
             <h3>Optimization & bug fixing</h3>
             <p>
@@ -218,7 +238,8 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
           <div class="service-content slideInUp wow delay-1s">
             <div class="service-icon">
-              <img src="img/services/website_advertising.png"  width="128" height="128" alt="web social media advertising" />
+              <img width="128" height="128" alt="web social media advertising"
+                src="img/services/website_advertising.png" />
             </div>
             <h3>Social media integration</h3>
             <p>
@@ -232,7 +253,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
           <div class="service-content slideInUp wow delay-150ms">
             <div class="service-icon">
-              <img src="img/services/website_responsive.png"  width="128" height="128" alt="responsive" />
+              <img width="128" height="128" alt="responsive" src="img/services/website_responsive.png" />
             </div>
             <h3>Responsive design</h3>
             <p>
@@ -338,29 +359,19 @@
           <div class="items">
             <i class="far fa-circle"></i>
             <h4>IT Manager, <span>“Alertica Consultants” LTD, Limassol, Cyprus</span></h4>
-            <span>March 2015 - July 2019</span>
+            <span>April 2015 - July 2019</span>
             <p>
-              Development of company's websites, Creation of automatically statistic reports on the
-              company website, Entering invoices, Claim forms, Registering of new clients and programs in database after
-              assessing the validity of associated documents accompanying the application, Renewal of programs,
-              Processing of client’s Claim of Benefits upon maturity of their programs, Provide basic support to users
-              on how to use the system, Operational tasks, Different reports for accounting.
-
-            </p>
-          </div>
-          <div class="items">
-            <i class="far fa-circle"></i>
-            <h4>Operator, <span>“Alertica Consultants” LTD, Limassol, Cyprus</span></h4>
-            <span>October 2013 - March 2015</span>
-            <p>
-              Back office, Invoices, Claim Forms, Liking bank payments, Introduction and Validation
-              Data.
+              Managing various company websites;
+              Creation of an application uploading Data from CRM and generating client's reports;
+              Analyses and reports to the management;
+              All IT software and hardware tasks (installations, troubleshooting, configuration and updates,
+              assembling);
             </p>
           </div>
           <div class="items">
             <i class="far fa-circle"></i>
             <h4>Free lancing, Software Developer, <span>“Alertica Consultants” LTD, Limassol, Cyprus</span> </h4>
-            <span>August 2013 - October 2013</span>
+            <span>August 2013 - March 2015</span>
             <p>
               Creation and development of the company's website.
             </p>
@@ -390,7 +401,7 @@
         <div class="row">
           <div class="col-md-6 skill-img">
             <div class="zoomIn wow">
-              <img src="img/skills.jpg"  width="540" height="405" alt="skills" />
+              <img width="540" height="405" alt="skills" src="img/skills.jpg" />
             </div>
           </div>
           <div class="col-md-6 skill-wrapper">
@@ -466,6 +477,27 @@
     </section>
   </section>
 
+  <section id="diplom" class="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title slideInLeft delay-50ms wow">
+            <span>My </span>Certificates
+          </h2>
+          <h3 class="slideInLeft wow mb-4">
+            The Certificates I Have Done
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="diplom-content" class="row"></div>
+      <div class="row justify-content-center">
+        <button id="diplom-more" class="btn">See more ...</button>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact">
     <div class="container">
       <div class="row">
@@ -510,19 +542,18 @@
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <div class="form-check">
-                  <input class="form-check-input" name="checkInputForm" type="checkbox" value=""
-                      id="invalidCheck" required>
-                  <label class="form-check-label" for="invalidCheck">
-                      I'm not a robot
-                  </label>
-                  <div class="invalid-feedback">
-                      You must agree before submitting.
-                  </div>
+                <input class="form-check-input" name="checkInputForm" type="checkbox" value="" id="invalidCheck"
+                  required>
+                <label class="form-check-label" for="invalidCheck">
+                  I'm not a robot
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
               </div>
-          </div>
+            </div>
 
             <div class="form-row">
               <div class="col-12">
@@ -539,7 +570,7 @@
 
   <div id="map-area">
     <div class="container">
-      <div class="row communication wow fadeInDown">
+      <div class="row communication wow fadeInDown" itemscope itemtype="http://schema.org/PostalAddress">
         <div class="col-md-4 contactPhone">
           <a href="tel:+35797793634" aria-label="+35797793634"><i class="fas fa-phone"></i></a>
           <p>Contact Number: +357-97793634</p>
@@ -549,8 +580,10 @@
           <p>Email Address: ciocoltan@yahoo.com</p>
         </div>
         <div class="col-md-4 location">
-          <a href="https://www.google.com/maps/search/Cyprus,+Limasol-3075,+Lefkipou+Street,+11/@34.6918064,32.9930904,13z/data=!3m1!4b1"><i class="fas fa-map-marker-alt"></i></a>
-          <p>Cyprus, Limasol-3075, Lefkipou Street, 11</p>
+          <a
+            href="https://www.google.com/maps/search/Cyprus,+Limasol-3075,+Lefkipou+Street,+11/@34.6918064,32.9930904,13z/data=!3m1!4b1"><i
+              class="fas fa-map-marker-alt"></i></a>
+          <p itemprop="addressLocality">Cyprus, Limasol-3075, Lefkipou Street, 11</p>
         </div>
       </div>
     </div>
@@ -569,8 +602,12 @@
   <script src="js/assets/wow.min.js"></script>
   <script src="js/script.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+    crossorigin="anonymous"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
